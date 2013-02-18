@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>AngularJS CollabBoard</title>
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+	<script src="/js/leader-board.js"></script>	
+
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/app.css">
+</head>
+<body ng-controller="MainCtrl">
+	<div class="navbar navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="#">AngularJS CollabBoard</a>
+			
+		</div>
+	</div>
+	<table class="table"> 
+		<thead>
+			<tr>
+				<th>Contestant</th>
+				<th>Score</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="contestant in contestants | orderBy:'-score'" contestant="contestant" ondelete="deleteContestant(id)">
+				<td><input ng-model="contestant.display_name" type="text" class="title" ></td>
+				<td><input ng-model="contestant.score" type="text" class="title" ></td>
+				<td><button ng-click="updateContestant(contestant)" class="btn btn-info">Update</button></td>
+				<td><button ng-click="deleteContestant(contestant.id)" class="btn btn-danger">Delete</button></td>
+			</tr>
+			<tr>
+				<td><input ng-model="display_name" type="text" class="title" ></td>
+				<td><input ng-model="score" type="text" class="title" ></td>
+				<td></td>
+				<td><button ng-click="createContestant(display_name, score);display_name='';score=''" class="btn btn-info">Create</button></td>
+			</tr>
+		</tbody>
+	</table>	
+</body>
+</html>

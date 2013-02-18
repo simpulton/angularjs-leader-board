@@ -1,0 +1,17 @@
+{
+  "name": "angular-leader-board",
+  "description": "AngularJS Leader Board",
+  "version": "0.0.1-2",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "socket.io": "0.9.x"
+  },
+  "subdomain": "simpulton.angularjs-leader-board",
+  "scripts": {
+    "start": "app.js"
+  },
+  "engines": {
+    "node": "0.8.x"
+  }
+}
