@@ -7,21 +7,34 @@ app.configure(function() {
     app.use(express.static(__dirname + '/public'));
 });
 
+var contestants = [];
+
 io.sockets.on('connection', function(socket) {
+
 	socket.on('listContestants', function(data) {
-		socket.broadcast.emit('onContestantsListed', data);
+    socket.emit('onContestantsListed', contestants);
 	});
 
 	socket.on('createContestant', function(data) {
-		socket.broadcast.emit('onContestantCreated', data);
+    contestants.push(data);
+    socket.broadcast.emit('onContestantCreated', data);
 	});
 
 	socket.on('updateContestant', function(data){
-		socket.broadcast.emit('onContestantUpdated', data);
+    contestants.forEach(function(person){
+      if (person.id === data.id) {
+        person.display_name = data.display_name;
+        person.score = data.score;
+      }
+    });
+    socket.broadcast.emit('onContestantUpdated', data);
 	});
 
 	socket.on('deleteContestant', function(data){
-		socket.broadcast.emit('onContestantDeleted', data);
+    contestants = contestants.filter(function(person) {
+      return person.id !== data.id;
+    });
+    socket.broadcast.emit('onContestantDeleted', data);
 	});
 });
 
