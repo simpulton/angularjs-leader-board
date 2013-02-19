@@ -65,7 +65,13 @@ app.factory('socket', function($rootScope) {
 app.controller('MainCtrl', function($scope, socket) {
 	$scope.contestants = [];
 
+  socket.emit('listContestants');
+
 	// Incoming
+  socket.on('onContestantsListed', function(data) {
+    $scope.contestants.push.apply($scope.contestants, data);
+  });
+
 	socket.on('onContestantCreated', function(data) {
 		$scope.contestants.push(data);
 	});
