@@ -1,0 +1,47 @@
+//  USER SELECT CONTROL (useful with touch gestures)
+//----------------------------------------------
+
+    @mixin disableTapHighlight {
+        // prevent touch flicker
+        @include experimental(tap-highlight-color, rgba(0,0,0,0));
+    }
+
+    @mixin disableUserSelect {
+        @include experimental(user-select, none);
+        @include disableTapHighlight;
+
+        // Bring Firefox behaviour in line with other browsers.
+        // https://developer.mozilla.org/en-US/docs/CSS/user-select
+        -moz-user-select: -moz-none;
+
+        // make sure the cursor doesn't indicate that text can be selected.
+        cursor: default;
+    }
+
+    @mixin enableUserSelect($el: element) {
+        @include experimental(user-select, $el);
+        // make sure the cursor indicates that the text can be selected.
+        @if $el != element {
+            cursor: $el;
+        }
+    }
+
+
+//  FIXED TABLE WIDTHS
+// ----------------------------------------------
+    @mixin tableCellWidth($w) {
+        width: $w;
+        max-width: $w;
+        min-width: $w;
+    } // END @mixin tableCellWidth()
+
+//  HIDE TABLE CELLS PROPERLY
+// ----------------------------------------------
+    
+    @mixin hideTableCell {
+        visibility: collapse;
+        display: none;
+        @include tableCellWidth(0);
+        padding: 0;
+        margin: 0;
+    }
