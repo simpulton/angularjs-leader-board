@@ -1,0 +1,32 @@
+$usersHaveAvatars: false;
+$widgetHasFooter: true;
+$widgetWidth: 100%;
+$widgetRowHeight: 56px;
+$widgetCellPad: 8px;
+$widgetRowBg: lighten($tableBorder, 11);
+
+//  These styles will be applied globally - 
+//  to both the widget and the admin area of the application
+// ----------------------------------------------
+#{elements-of-type(block)} { @include box-sizing(border-box); }
+
+// we want the widget to live on a <body> surface that has a little padding JUST FOR TESTING - NOT WHEN EMBEDED
+.test-surface { padding: 40px; }
+
+.clip-text {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    @include experimental(text-overflow, ellipsis);
+}
+
+// table-less data grids
+.table figure { margin: 0; }
+.tbody, .thead, .tr {  
+    clear: both;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+.td, .th { float: left; }

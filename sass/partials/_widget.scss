@@ -1,0 +1,209 @@
+& { 
+    width: $widgetWidth; 
+    color: $textColor;
+    text-shadow: 0 1px 0 rgba(contrast-color($textColor), .9);
+    @include disableUserSelect; 
+}
+//  These styles will be applied to the widget only
+// since the @import is nested within .ldrbd-widget
+// ----------------------------------------------
+
+$footerBg: lighten($tableBackgroundAccent, 4);
+$headerBdWidth: 1px;
+$wrapperPad: 6px;
+$picWidth: if($usersHaveAvatars == true, $widgetRowHeight, 0);
+$scoreWidth: 80px;
+$headerBg: #ffc321;
+
+// DO NOT EDIT THESE - EDIT THE BASE COLOR ABOVE ONLY
+$headerBgLight: desaturate(adjust_hue($headerBg, 9deg), 7%);
+$headerBgLightest: lighten($headerBgLight, 18);
+$headerBgDarkest: saturate(darken($headerBg, 18), 10);
+$headerBgDark: lighten(saturate($headerBgDarkest, 5), 5);
+$headerTxtColor: darken(adjust_hue($headerBgDarkest, -10deg), 19);
+
+$headerRibbonCornerZindex: 1;
+
+header {
+    background-color: mix($headerBgDark, $headerBgDarkest, 50%); // degrade gracefully
+    @include background-image(linear-gradient(top, $headerBgDark, $headerBgDarkest)); 
+    padding: $headerBdWidth; // creates the "border" effect
+    text-align: center;
+    position: relative;
+
+    // ribbon effect corners
+    &:before, &:after {
+        @include rotate(45deg);
+        display: block;
+        width: $wrapperPad * 2;
+        height: $wrapperPad * 2;
+        position: absolute;
+        bottom: -#{$wrapperPad - $headerBdWidth};
+        z-index: $headerRibbonCornerZindex;
+        content: '';
+        background-color: $headerBgDarkest;
+    }
+    &:before {  
+        left: ($wrapperPad/2) - $headerBdWidth;
+    }
+    &:after { 
+        right: ($wrapperPad/2) - $headerBdWidth;
+    }
+
+    .widget-title {
+        position: relative;
+        z-index: $headerRibbonCornerZindex + 3; // keep above ribbon corners AND ldr-list-wrapper
+        margin: 0;
+        padding: 10px 0;
+        font-size: 18px;
+        color: $headerTxtColor;
+        text-shadow: 0 1px 0 $headerBgLightest;
+        line-height: normal;
+        background-color: mix($headerBgLight, $headerBg, 50%); // degrade gracefully
+        @include background-image(linear-gradient(top, $headerBgLight, $headerBg)); 
+        @include box-shadow(inset 0 1px 0 $headerBgLightest);
+
+        // use the :after element of this box for the header drop shadow since the header itself is "below" the wrapper
+        &:after {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: $headerBdWidth; // keep the beginning of the drop shadow off of the bottom "border" of <header>
+            content: '';
+            @include box-shadow(0 $headerBdWidth $wrapperPad/2 0 rgba(0, 0, 0, .3));
+        }
+
+    }
+} // END <header>
+
+// match the footer border with the border of the data-grid
+footer, .ldr-list {
+    border: 1px solid darken($tableBorder, 10);
+}
+
+footer {
+    border-top-color: $tableBorder;
+    background-color: $footerBg;
+    @include background-image(linear-gradient(top, lighten($footerBg, 4), darken($footerBg, 10)));
+    padding: $widgetCellPad*2 $widgetCellPad;
+    @include border-bottom-radius($baseBorderRadius);
+
+    // keep above .ldr-list-wrapper so we can drop a shadow on it
+    position: relative;
+    z-index: $headerRibbonCornerZindex + 2; 
+    color: darken($footerBg, 40);
+    text-align: center;
+
+    &:before {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        @include box-shadow(0 -1px 5px 0 rgba(0, 0, 0, .1));
+    }
+
+} // END <footer>
+
+.ldr-list-wrapper {
+    // this background color MUST be transparent in order for the ribbon corners to show
+    background-color: transparent;
+    width: 100%;
+    padding: 0 $wrapperPad;
+    position: relative;
+    z-index: $headerRibbonCornerZindex + 1; // keep above ribbon corners
+}
+
+.ldr-list {
+    // this MUST have a background color in order to hide the rest of the ribbon corners
+    background-color: white;
+    margin: 0;
+    @if $widgetHasFooter != true {
+        @include border-bottom-radius($baseBorderRadius);
+        .tbody:last-child .tr:last-child {
+            .td:first-child { @include border-bottom-left-radius($baseBorderRadius); }
+            .td:last-child { @include border-bottom-right-radius($baseBorderRadius); }
+        }
+    } @else {
+        border-bottom: 0 none;
+    }
+
+    .tr, .td, .th { 
+        height: $widgetRowHeight; 
+        line-height: $widgetRowHeight; 
+        background-color: $widgetRowBg;
+    }
+    .td, .th {
+        padding: 0 $widgetCellPad;
+        width: auto;
+        white-space: nowrap;
+        position: absolute;
+        top: 0;
+        left: auto;
+        border-bottom: 1px solid lighten($widgetRowBg, 25); // create chisel effect
+    }
+
+    // thead columns
+    .thead {
+        .tr, .td, .th {
+            height: $widgetRowHeight/2;
+            line-height: $widgetRowHeight/2;
+            background-color: lighten($tableBorder, 3);
+            font-size: $baseFontSize - 2;
+            text-transform: uppercase;
+            border-bottom: 0 none;
+        }
+    }
+
+    // individual columns
+    @if $usersHaveAvatars == true {
+        .pic {
+            left: 0;
+            width: $picWidth;
+            .thumbnail {
+                background: $warningBackground;
+                position: relative;
+                top: $widgetCellPad;
+                width: 100%;
+                height: $picWidth - ($widgetCellPad * 2);
+            }
+        }
+    } @else {
+        .pic {
+            @include hideTableCell;
+        }
+    }
+    .name {
+        // this one scales to take up all available width
+        left: $picWidth;
+        right: $scoreWidth;
+    }
+    .score {
+        width: $scoreWidth;
+        min-width: $scoreWidth;
+        right: 0;
+        text-align: center;
+        font-weight: bold;
+
+        &, .clip-text {
+            @include transition(width 0s linear .3s);
+        }
+
+        // if the score is truncated and the user hovers over it for 300ms or more... reveal the entire score
+        &:hover {
+            &, .clip-text {
+                // slightly shorter delay when hovering out
+                @include transition-delay(.1s);
+            }
+            width: auto;
+        }
+    }
+} // END .ldrbd-widget .ldr-list
+
+// if there is a header, we don't need the top border
+header + .ldr-list-wrapper .ldr-list {
+    border-top: 0 none;
+}

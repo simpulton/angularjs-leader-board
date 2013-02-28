@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@import "partials/compass-imports";
+@import "bootstrap/bootstrap";
+
+@import "partials/mixins";
+@import "partials/globals";
+
+.ldrbd-widget {
+    @import "partials/widget";
+}
