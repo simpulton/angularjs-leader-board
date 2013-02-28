@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html data-ng-app="app" lang="en">
 <head>
 	<title>AngularJS Leader Board</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<link href="/css/app.css" rel="stylesheet">
 
@@ -12,25 +14,39 @@
 	<script src="/js/leader-board.js"></script>	
 
 </head>
-<body ng-controller="MainCtrl">
-	<div class="navbar navbar-inverse">
-		<div class="navbar-inner">
-			<a class="brand" href="#">AngularJS Leader Board</a>
+<body data-ng-controller="MainCtrl" role="application" class="test-surface">
+	<div class="ldrbd-widget" role="widget">
+		<header role="heading">
+			<h1 class="widget-title">Leaderboard</h1>
+		</header>
+		<div class="ldr-list-wrapper" role="structure">
+			<div class="ldr-list table table-hover" role="grid">
+				
+				<div class="thead" role="rowheader">
+					<div class="tr" role="row">
+						<div class="th pic"></div>
+						<div class="th name"><div class="clip-text">Name</div></div>
+						<div class="th score"><div class="clip-text">Score</div></div>
+					</div>
+				</div>
+
+				<div class="tbody" role="rowgroup">
+					<div class="tr" data-ng-repeat="contestant in contestants | orderBy:'-score'" data-contestant="contestant" role="row">
+						<div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
+						<div class="td name" role="gridcell" title="{{contestant.display_name}}">
+							<div class="clip-text">{{contestant.display_name}}</div>
+						</div>
+						<div class="td score" role="gridcell" title="{{contestant.score}}"><div class="clip-text">{{contestant.score}}</div></div>
+					</div>
+				</div>
+				
+			</div>
+
+			<footer role="status">
+				&copy; 2013 Simpulton and Company
+			</footer>
+
 		</div>
 	</div>
-	<table class="table"> 
-		<thead>
-			<tr>
-				<th>Contestant</th>
-				<th>Score</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="contestant in contestants | orderBy:'-score'" contestant="contestant">
-				<td>{{contestant.display_name}}</td>
-				<td>{{contestant.score}}</td>
-			</tr>
-		</tbody>
-	</table>
 </body>
 </html>
