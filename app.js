@@ -25,6 +25,7 @@ io.sockets.on('connection', function(socket) {
       if (person.id === data.id) {
         person.display_name = data.display_name;
         person.score = data.score;
+        break;
       }
     });
     socket.broadcast.emit('onContestantUpdated', data);

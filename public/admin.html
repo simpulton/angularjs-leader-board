@@ -29,7 +29,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="contestant in contestants | orderBy:'-score'" contestant="contestant" ondelete="deleteContestant(id)">
+			<tr ng-repeat="contestant in contestants | orderBy:'display_name'" contestant="contestant" ondelete="deleteContestant(id)">
 				<td><input ng-model="contestant.display_name" type="text" class="title" ></td>
 				<td><input ng-model="contestant.score" type="text" class="title" ></td>
 				<td><button ng-click="updateContestant(contestant)" class="btn btn-info">Update</button></td>

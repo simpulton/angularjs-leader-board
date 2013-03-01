@@ -11,8 +11,8 @@ app.directive('contestant', function(socket) {
 				// Update if the same contestant
 				if(data.id == $scope.contestant.id) {
 					$scope.contestant.display_name = data.display_name;
-					$scope.contestant.score = data.score;
-				}				
+					$scope.contestant.score = Number(data.score);
+				}
 			});
 
 			// Outgoing
@@ -85,7 +85,7 @@ app.controller('MainCtrl', function($scope, socket) {
 		var contestant = {
 			id: new Date().getTime(),
 			display_name: display_name,
-			score: score
+			score: Number(score)
 		};
 
 		$scope.contestants.push(contestant);
