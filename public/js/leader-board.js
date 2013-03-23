@@ -113,3 +113,22 @@ app.controller('MainCtrl', function($scope, socket) {
 		$scope.contestants = newContestants;
 	}
 });
+
+// misc form validation stuff
+$(function(){
+
+	setTimeout(function(){
+		// wait till angular is done populating the list
+		$requiredInputs = $("#ldrbd").find("input[required]:not('.ng-dirty')");
+		$requiredInputs.on("blur", function(){
+			$(this)
+				.removeClass("ng-pristine")
+				.addClass("ng-dirty")
+				.attr({
+					placeholder: "Required"
+				});
+
+		});
+	}, 100);
+
+});
