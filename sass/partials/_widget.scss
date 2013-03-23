@@ -1,8 +1,8 @@
+//+ Leaderboard Widget Styles
+//+ --------------------------------------------------
+
 & { 
     width: $widgetWidth; 
-    color: $textColor;
-    text-shadow: 0 1px 0 rgba(contrast-color($textColor), .9);
-    @include disableUserSelect; 
 }
 //  These styles will be applied to the widget only
 // since the @import is nested within .ldrbd-widget
@@ -13,14 +13,6 @@ $headerBdWidth: 1px;
 $wrapperPad: 6px;
 $picWidth: if($usersHaveAvatars == true, $widgetRowHeight, 0);
 $scoreWidth: 80px;
-$headerBg: #ffc321;
-
-// DO NOT EDIT THESE - EDIT THE BASE COLOR ABOVE ONLY
-$headerBgLight: desaturate(adjust_hue($headerBg, 9deg), 7%);
-$headerBgLightest: lighten($headerBgLight, 18);
-$headerBgDarkest: saturate(darken($headerBg, 18), 10);
-$headerBgDark: lighten(saturate($headerBgDarkest, 5), 5);
-$headerTxtColor: darken(adjust_hue($headerBgDarkest, -10deg), 19);
 
 $headerRibbonCornerZindex: 1;
 
@@ -59,8 +51,8 @@ header {
         color: $headerTxtColor;
         text-shadow: 0 1px 0 $headerBgLightest;
         line-height: normal;
-        background-color: mix($headerBgLight, $headerBg, 50%); // degrade gracefully
-        @include background-image(linear-gradient(top, $headerBgLight, $headerBg)); 
+        background-color: mix($headerBgLight, $headerYellowBg, 50%); // degrade gracefully
+        @include background-image(linear-gradient(top, $headerBgLight, $headerYellowBg)); 
         @include box-shadow(inset 0 1px 0 $headerBgLightest);
 
         // use the :after element of this box for the header drop shadow since the header itself is "below" the wrapper
