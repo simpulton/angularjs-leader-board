@@ -1,4 +1,4 @@
-.ng-cloak, [ng-cloak] { display: none; }
+.ng-cloak, [ng-cloak], [data-ng-cloak] { display: none; }
 
 $usersHaveAvatars: false;
 $widgetHasFooter: true;
@@ -6,6 +6,15 @@ $widgetWidth: 100%;
 $widgetRowHeight: 56px;
 $widgetCellPad: 8px;
 $widgetRowBg: lighten($tableBorder, 11);
+$headerYellowBg: #ffc321;
+// DO NOT EDIT THESE - EDIT THE BASE COLOR ABOVE ONLY
+$headerBgLight: desaturate(adjust_hue($headerYellowBg, 9deg), 7%);
+$headerBgLightest: lighten($headerBgLight, 18);
+$headerBgDarkest: saturate(darken($headerYellowBg, 18), 10);
+$headerBgDark: lighten(saturate($headerBgDarkest, 5), 5);
+$headerTxtColor: darken(adjust_hue($headerBgDarkest, -10deg), 19);
+// admin vars
+$newRowAccentBg: lighten($headerBgLightest, 20%);
 
 //  These styles will be applied globally - 
 //  to both the widget and the admin area of the application
@@ -14,6 +23,12 @@ $widgetRowBg: lighten($tableBorder, 11);
 
 // we want the widget to live on a <body> surface that has a little padding JUST FOR TESTING - NOT WHEN EMBEDED
 .test-surface { padding: 40px; }
+
+body {
+    color: $textColor;
+    text-shadow: 0 1px 0 rgba(contrast-color($textColor), .9);
+    @include disableUserSelect; 
+}
 
 .clip-text {
     display: inline-block;

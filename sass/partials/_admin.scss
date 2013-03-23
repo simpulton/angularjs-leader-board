@@ -1,0 +1,67 @@
+//+ Leaderboard Admin Styles
+//+ --------------------------------------------------
+
+& {
+    // this is the <body class="ldrbd-admin"> elem
+    padding-top: $navbarHeight + $gridGutterWidth;
+}
+
+.contestant-grid {
+    table-layout: fixed;
+    .actions {
+        width: 140px;
+        min-width: 140px;
+        max-width: 140px;
+
+        .btn {
+            &:hover, 
+            &:focus {
+                outline: 0;
+                opacity: 1;
+            }
+        }
+    }
+
+    // row for creating new contestants
+    .new {
+        td, th { 
+            border-top-color: mix($headerBgDark, $newRowAccentBg, 15%);
+            border-bottom: 1px solid mix($headerBgDark, $newRowAccentBg, 10%); // light chisel
+            background-color: $newRowAccentBg;
+        }
+        &:hover {
+            td, th { background-color: darken($newRowAccentBg, 5%); }
+        }
+        input { font-weight: bold; }
+        .btn { width: 100%; display: block; opacity: .8; }
+
+        // first "existing" row (directly adjacent to .new) will create the light chisel
+        + .existing {
+            td, th {
+                // can't use borders since they collapse
+                @include box-shadow(inset 0 1px 0 0 #fff);
+            }
+        }
+
+    }
+
+    // row for existing contestants
+    .existing {
+        .btn {
+            color: $grayLight;
+        }
+        .delete {
+            &:hover,
+            &:focus {
+                @extend .btn-danger;
+            }
+        }
+        .update {
+            &:hover,
+            &:focus {
+                @extend .btn-success;
+            }
+        }
+    }
+
+}
