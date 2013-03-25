@@ -53,7 +53,7 @@
   // Disabled state
   &.disabled,
   &[disabled] {
-    cursor: default;
+    cursor: not-allowed;
     background-image: none;
     @include tb_opacity(65);
     @include tb_box-shadow(none);

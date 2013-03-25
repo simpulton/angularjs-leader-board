@@ -1,47 +1,112 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html data-ng-app="app" lang="en">
 <head>
-	<title>AngularJS CollabBoard</title>
+    <title>Admin &middot; AngularJS Leader Board</title>
 
-	<link href="/css/app.css" rel="stylesheet">
-	
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
-	<script src="/js/leader-board.js"></script>	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link href="/css/app.css" rel="stylesheet">
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/modernizr.min.js"></script>
 
 </head>
-<body ng-controller="MainCtrl">
-	<div class="navbar navbar-inverse">
-		<div class="navbar-inner">
-			<a class="brand" href="#">AngularJS CollabBoard</a>
-			
-		</div>
-	</div>
-	<table class="table"> 
-		<thead>
-			<tr>
-				<th>Contestant</th>
-				<th>Score</th>
-				<th></th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="contestant in contestants | orderBy:'display_name'" contestant="contestant" ondelete="deleteContestant(id)">
-				<td><input ng-model="contestant.display_name" type="text" class="title" ></td>
-				<td><input ng-model="contestant.score" type="text" class="title" ></td>
-				<td><button ng-click="updateContestant(contestant)" class="btn btn-info">Update</button></td>
-				<td><button ng-click="deleteContestant(contestant.id)" class="btn btn-danger">Delete</button></td>
-			</tr>
-			<tr>
-				<td><input ng-model="display_name" type="text" class="title" ></td>
-				<td><input ng-model="score" type="text" class="title" ></td>
-				<td></td>
-				<td><button ng-click="createContestant(display_name, score);display_name='';score=''" class="btn btn-info">Create</button></td>
-			</tr>
-		</tbody>
-	</table>	
+<body ng-controller="MainCtrl" role="application" class="ldrbd-admin" data-ng-cloak>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" tabindex="-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#" tabindex="-1">AngularJS Leader Board</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="admin.html" tabindex="-1">Admin</a></li>
+                        <li><a href="index.html" target="leaderboard" tabindex="-1">Leaderboard</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="row-fluid">
+                    <form name="ldrbd" id="ldrbd">
+                        <table class="table table-hover contestant-grid" role="grid"> 
+                            <thead>
+                                <tr>
+                                    <th class="name">Contestant</th>
+                                    <th class="score">Score</th>
+                                    <th class="actions"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="new">
+                                    <td class="name">
+                                        <input name="contestantName" ng-model="display_name" type="text" required>
+                                    </td>
+                                    <td class="score">
+                                        <input name="contestantScore" ng-model="score" type="number" required>
+                                    </td>
+                                    <td class="actions">
+                                        <div class="btn-group pull-right">
+                                            <button ng-click="createContestant(display_name, score);display_name='';score=''" class="btn btn-success" 
+                                                    ng-disabled="
+                                                        ldrbd.contestantName.$error.required || 
+                                                        ldrbd.contestantScore.$error.required
+                                                    "
+                                            >
+                                                Create
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="existing" ng-repeat="contestant in contestants | orderBy:'display_name'" contestant="contestant" ondelete="deleteContestant(id)">
+                                    <td class="name">
+                                        <input name="contestantName_{{ contestant.id }}" ng-model="contestant.display_name" type="text" required>
+                                    </td>
+                                    <td class="score">
+                                        <input name="contestantScore_{{ contestant.id }}" ng-model="contestant.score" type="number" required>
+                                    </td>
+                                    <td class="actions">
+                                        <div class="btn-group pull-right">
+                                            <button ng-click="deleteContestant(contestant.id)" class="btn delete">Delete</button>
+                                            <button ng-click="updateContestant(contestant)" class="btn update"
+                                                    ng-disabled="
+                                                        ldrbd.contestantName_{{ contestant.id }}.$error.required || 
+                                                        ldrbd.contestantScore_{{ contestant.id }}.$error.required
+                                                    "
+                                            >
+                                                Update
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div><!--/row-fluid-->
+            </div><!--/span-->
+        </div><!--/row-fluid-->
+    </div><!--/.container-fluid-->
+
+    <footer role="status" class="navbar navbar-fixed-bottom">
+        <div class="navbar-inner">
+            <div class="container-fluid text-center">
+                <span class="navbar-text">&copy; 2013 Simpulton and Company</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/leader-board.js"></script> 
+
 </body>
 </html>
