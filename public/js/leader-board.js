@@ -80,6 +80,13 @@ app.controller('MainCtrl', function($scope, socket) {
 		$scope.handleDeleteContestant(data.id);
 	});
 
+	var _resetFormValidation = function() {
+		$("input:first").focus();
+		var $dirtyInputs = $("#ldrbd").find(".new input.ng-dirty")
+									  .removeClass("ng-dirty")
+									  .addClass("ng-pristine");
+	};
+
 	// Outgoing
 	$scope.createContestant = function(display_name, score) {
 		var contestant = {
@@ -90,6 +97,8 @@ app.controller('MainCtrl', function($scope, socket) {
 
 		$scope.contestants.push(contestant);
 		socket.emit('createContestant', contestant);
+
+		_resetFormValidation();
 	};
 
 	$scope.deleteContestant = function(id) {
@@ -123,7 +132,7 @@ $(function(){
 		// focus the first field
 		$("input:first").focus();
 
-		$requiredInputs = $("#ldrbd").find("input[required]:not('.ng-dirty')");
+		var $requiredInputs = $("#ldrbd").find("input[required]:not('.ng-dirty')");
 		$requiredInputs.on("blur", function(){
 			$(this)
 				.removeClass("ng-pristine")
