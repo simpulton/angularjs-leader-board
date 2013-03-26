@@ -40,7 +40,8 @@
                             <thead>
                                 <tr>
                                     <th class="name">Contestant</th>
-                                    <th class="score">Score</th>
+                                    <th class="score" width="20%">Lane</th>
+                                    <th class="score" width="20%">Score</th>
                                     <th class="actions"></th>
                                 </tr>
                             </thead>
@@ -49,14 +50,18 @@
                                     <td class="name">
                                         <input name="contestantName" ng-model="display_name" type="text" required>
                                     </td>
+                                    <td class="lane">
+                                        <input name="contestantLane" ng-model="lane" type="text" required>
+                                    </td>
                                     <td class="score">
-                                        <input name="contestantScore" ng-model="score" type="number" required>
+                                        <input name="contestantScore" ng-model="score" type="text" required>
                                     </td>
                                     <td class="actions">
                                         <div class="btn-group pull-right">
-                                            <button ng-click="createContestant(display_name, score);display_name='';score=''" class="btn btn-success" 
+                                            <button ng-click="createContestant(display_name, lane, score);display_name='';lane='';score=''" class="btn btn-success" 
                                                     ng-disabled="
                                                         ldrbd.contestantName.$error.required || 
+                                                        ldrbd.contestantLane.$error.required || 
                                                         ldrbd.contestantScore.$error.required
                                                     "
                                             >
@@ -69,8 +74,23 @@
                                     <td class="name">
                                         <input name="contestantName_{{ contestant.id }}" ng-model="contestant.display_name" type="text" required>
                                     </td>
+                                    <td class="lane">
+                                        <div class="input-append">
+                                            <input name="contestantLane_{{ contestant.id }}" ng-model="contestant.lane" type="text" required>
+                                            <div class="btn-group btn-group-vertical">
+                                                <button class="btn"><b class="caret up"></b></button>
+                                                <button class="btn"><b class="caret down"></b></button>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td class="score">
-                                        <input name="contestantScore_{{ contestant.id }}" ng-model="contestant.score" type="number" required>
+                                        <div class="input-append">
+                                            <input name="contestantScore_{{ contestant.id }}" ng-model="contestant.score" type="text" required>
+                                            <div class="btn-group">
+                                                <button class="btn btn-success">&#043;</button>
+                                                <button class="btn btn-danger">&mdash;</button>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td class="actions">
                                         <div class="btn-group pull-right">
@@ -78,6 +98,7 @@
                                             <button ng-click="updateContestant(contestant)" class="btn update"
                                                     ng-disabled="
                                                         ldrbd.contestantName_{{ contestant.id }}.$error.required || 
+                                                        ldrbd.contestantLane_{{ contestant.id }}.$error.required || 
                                                         ldrbd.contestantScore_{{ contestant.id }}.$error.required
                                                     "
                                             >

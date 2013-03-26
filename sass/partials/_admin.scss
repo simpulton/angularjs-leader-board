@@ -1,6 +1,8 @@
 //+ Leaderboard Admin Styles
 //+ --------------------------------------------------
 
+$btnBorderWidth: 1px;
+
 & {
     // this is the <body class="ldrbd-admin"> elem
     padding-top: $navbarHeight + $gridGutterWidth;
@@ -47,7 +49,7 @@
 
     // row for existing contestants
     .existing {
-        .btn {
+        .delete, .update {
             color: $grayLight;
         }
         .delete {
@@ -64,4 +66,74 @@
         }
     }
 
+    // appended inputs
+    .input-append {
+        width: 96%;
+        height: 100%;
+        position: relative;
+        margin: 0;
+        input {
+            width: 98%;
+            border-right: 0 none;
+            position: static;
+            padding-right: 40px - $btnBorderWidth;
+            @include box-sizing(border-box);
+            height: $inputHeight;
+        }
+        .btn-group {
+            position: absolute;
+            z-index: 3; // keep above input even when its focused
+            right: 0;
+        }
+    }
+
+    // horizontal spin buttons (for increasing/lowering score)
+    .score .input-append {
+        input {
+            padding-right: 80px - ($btnBorderWidth * 2); // there are two horizontally-aligned buttons
+        }
+        .btn-group {
+            .btn {
+                // keep them the same width
+                min-width: 40px;
+                &:first-child {
+                    @include border-left-radius(0);
+                }
+            }
+        }
+    }
+    // vertically stacked spin buttons (for increasing/lowering lane #)
+    .lane .input-append {
+        // input { 
+        //     width: 84%;
+        // }
+        .btn-group-vertical {
+            height: $inputHeight;
+            .btn {
+                min-width: 40px;
+                height: $inputHeight / 2;
+                line-height: $inputHeight / 2;
+                padding: 0;
+
+                &:first-child {
+                    @include border-left-radius(0);
+                }
+                &:last-child {
+                    margin-top: 0;
+                    @include border-top-right-radius(0);
+                }
+
+                .caret {
+                    margin: 5px 0 0 0;
+                    &.up {
+                        // rotate it
+                        border-top-width: 0;
+                        border-bottom-width: 4px;
+                        border-bottom-style: solid;
+                        border-bottom-color: #000;
+                    }
+                }
+            }
+        }
+    } // END spin buttons
 }

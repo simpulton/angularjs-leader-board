@@ -2257,26 +2257,50 @@ body { color: #333333; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); -webkit-us
 /* line 199, ../../sass/partials/_widget.scss */
 .ldrbd-widget header + .ldr-list-wrapper .ldr-list { border-top: 0 none; }
 
-/* line 4, ../../sass/partials/_admin.scss */
+/* line 6, ../../sass/partials/_admin.scss */
 .ldrbd-admin { padding-top: 60px; }
-/* line 9, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid { table-layout: fixed; }
 /* line 11, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid { table-layout: fixed; }
+/* line 13, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .actions { width: 140px; min-width: 140px; max-width: 140px; }
-/* line 18, ../../sass/partials/_admin.scss */
+/* line 20, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .actions .btn:hover, .ldrbd-admin .contestant-grid .actions .btn:focus { outline: 0; opacity: 1; }
-/* line 27, ../../sass/partials/_admin.scss */
+/* line 29, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .new td, .ldrbd-admin .contestant-grid .new th { border-top-color: #f9edc1; border-bottom: 1px solid #faf2cd; background-color: #fefbe4; }
-/* line 33, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .new:hover td, .ldrbd-admin .contestant-grid .new:hover th { background-color: #fdf7cb; }
 /* line 35, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .new:hover td, .ldrbd-admin .contestant-grid .new:hover th { background-color: #fdf7cb; }
+/* line 37, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .new input { font-weight: bold; }
-/* line 36, ../../sass/partials/_admin.scss */
+/* line 38, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .new .btn { width: 100%; display: block; opacity: .8; }
-/* line 40, ../../sass/partials/_admin.scss */
+/* line 42, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .new + .existing td, .ldrbd-admin .contestant-grid .new + .existing th { -webkit-box-shadow: inset 0 1px 0 0 white; -moz-box-shadow: inset 0 1px 0 0 white; box-shadow: inset 0 1px 0 0 white; }
-/* line 50, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .existing .btn { color: #999999; }
+/* line 52, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .existing .delete, .ldrbd-admin .contestant-grid .existing .update { color: #999999; }
+/* line 70, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .input-append { width: 96%; height: 100%; position: relative; margin: 0; }
+/* line 75, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .input-append input { width: 98%; border-right: 0 none; position: static; padding-right: 39px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 30px; }
+/* line 83, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .input-append .btn-group { position: absolute; z-index: 3; right: 0; }
+/* line 92, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .score .input-append input { padding-right: 78px; }
+/* line 96, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .score .input-append .btn-group .btn { min-width: 40px; }
+/* line 99, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .score .input-append .btn-group .btn:first-child { -moz-border-radius-topleft: 0; -webkit-border-top-left-radius: 0; border-top-left-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-left-radius: 0; border-bottom-left-radius: 0; }
+/* line 110, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical { height: 30px; }
+/* line 112, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn { min-width: 40px; height: 15px; line-height: 15px; padding: 0; }
+/* line 118, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn:first-child { -moz-border-radius-topleft: 0; -webkit-border-top-left-radius: 0; border-top-left-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-left-radius: 0; border-bottom-left-radius: 0; }
+/* line 121, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn:last-child { margin-top: 0; -moz-border-radius-topright: 0; -webkit-border-top-right-radius: 0; border-top-right-radius: 0; }
+/* line 126, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn .caret { margin: 5px 0 0 0; }
+/* line 128, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn .caret.up { border-top-width: 0; border-bottom-width: 4px; border-bottom-style: solid; border-bottom-color: #000; }
 
 @-ms-viewport { width: device-width; }
 
