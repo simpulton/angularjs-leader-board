@@ -911,6 +911,491 @@ table td[class*="span"], .row-fluid table td[class*="span"], table th[class*="sp
 /* line 268, ../../sass/bootstrap/_tables.scss */
 .table-hover tbody tr.info:hover > td, .table-hover tbody tr.info:hover > .td, .table-hover .tbody .tr.info:hover > td, .table-hover .tbody .tr.info:hover > .td { background-color: #c4e3f3; }
 
+@font-face { font-family: 'Glyphicons Halflings'; src: url("../fonts/glyphiconshalflings-regular.eot"); src: url("../fonts/glyphiconshalflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphiconshalflings-regular.woff") format("woff"), url("../fonts/glyphiconshalflings-regular.ttf") format("truetype"), url("../fonts/glyphiconshalflings-regular.svg#glyphiconshalflings-regular") format("svg"); font-style: normal; font-weight: normal; }
+
+/* line 34, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon:before { font-family: 'Glyphicons Halflings'; font-style: normal; line-height: 1; }
+
+/* line 41, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-glass:before { content: "\e001"; }
+
+/* line 42, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-music:before { content: "\e002"; }
+
+/* line 43, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-search:before { content: "\e003"; }
+
+/* line 44, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-envelope:before { content: "\2709"; }
+
+/* line 45, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-heart:before { content: "\e005"; }
+
+/* line 46, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-star:before { content: "\e006"; }
+
+/* line 47, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-star-empty:before { content: "\e007"; }
+
+/* line 48, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-user:before { content: "\e008"; }
+
+/* line 49, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-film:before { content: "\e009"; }
+
+/* line 50, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-th-large:before { content: "\e010"; }
+
+/* line 51, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-th:before { content: "\e011"; }
+
+/* line 52, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-th-list:before { content: "\e012"; }
+
+/* line 53, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-ok:before { content: "\e013"; }
+
+/* line 54, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-remove:before { content: "\e014"; }
+
+/* line 55, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-zoom-in:before { content: "\e015"; }
+
+/* line 56, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-zoom-out:before { content: "\e016"; }
+
+/* line 57, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-off:before { content: "\e017"; }
+
+/* line 58, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-signal:before { content: "\e018"; }
+
+/* line 59, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-cog:before { content: "\e019"; }
+
+/* line 60, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-trash:before { content: "\e020"; }
+
+/* line 61, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-home:before { content: "\e021"; }
+
+/* line 62, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-file:before { content: "\e022"; }
+
+/* line 63, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-time:before { content: "\e023"; }
+
+/* line 64, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-road:before { content: "\e024"; }
+
+/* line 65, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-download-alt:before { content: "\e025"; }
+
+/* line 66, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-download:before { content: "\e026"; }
+
+/* line 67, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-upload:before { content: "\e027"; }
+
+/* line 68, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-inbox:before { content: "\e028"; }
+
+/* line 69, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-play-circle:before { content: "\e029"; }
+
+/* line 70, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-repeat:before { content: "\e030"; }
+
+/* line 71, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-refresh:before { content: "\e031"; }
+
+/* line 72, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-list-alt:before { content: "\e032"; }
+
+/* line 73, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-lock:before { content: "\e033"; }
+
+/* line 74, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-flag:before { content: "\e034"; }
+
+/* line 75, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-headphones:before { content: "\e035"; }
+
+/* line 76, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-volume-off:before { content: "\e036"; }
+
+/* line 77, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-volume-down:before { content: "\e037"; }
+
+/* line 78, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-volume-up:before { content: "\e038"; }
+
+/* line 79, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-qrcode:before { content: "\e039"; }
+
+/* line 80, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-barcode:before { content: "\e040"; }
+
+/* line 81, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-tag:before { content: "\e041"; }
+
+/* line 82, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-tags:before { content: "\e042"; }
+
+/* line 83, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-book:before { content: "\e043"; }
+
+/* line 84, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-bookmark:before { content: "\e044"; }
+
+/* line 85, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-print:before { content: "\e045"; }
+
+/* line 86, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-camera:before { content: "\e046"; }
+
+/* line 87, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-font:before { content: "\e047"; }
+
+/* line 88, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-bold:before { content: "\e048"; }
+
+/* line 89, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-italic:before { content: "\e049"; }
+
+/* line 90, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-text-height:before { content: "\e050"; }
+
+/* line 91, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-text-width:before { content: "\e051"; }
+
+/* line 92, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-align-left:before { content: "\e052"; }
+
+/* line 93, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-align-center:before { content: "\e053"; }
+
+/* line 94, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-align-right:before { content: "\e054"; }
+
+/* line 95, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-align-justify:before { content: "\e055"; }
+
+/* line 96, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-list:before { content: "\e056"; }
+
+/* line 97, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-indent-left:before { content: "\e057"; }
+
+/* line 98, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-indent-right:before { content: "\e058"; }
+
+/* line 99, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-facetime-video:before { content: "\e059"; }
+
+/* line 100, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-picture:before { content: "\e060"; }
+
+/* line 101, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-pencil:before { content: "\270f"; }
+
+/* line 102, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-map-marker:before { content: "\e062"; }
+
+/* line 103, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-adjust:before { content: "\e063"; }
+
+/* line 104, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-tint:before { content: "\e064"; }
+
+/* line 105, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-edit:before { content: "\e065"; }
+
+/* line 106, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-share:before { content: "\e066"; }
+
+/* line 107, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-check:before { content: "\e067"; }
+
+/* line 108, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-move:before { content: "\e068"; }
+
+/* line 109, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-step-backward:before { content: "\e069"; }
+
+/* line 110, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-fast-backward:before { content: "\e070"; }
+
+/* line 111, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-backward:before { content: "\e071"; }
+
+/* line 112, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-play:before { content: "\e072"; }
+
+/* line 113, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-pause:before { content: "\e073"; }
+
+/* line 114, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-stop:before { content: "\e074"; }
+
+/* line 115, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-forward:before { content: "\e075"; }
+
+/* line 116, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-fast-forward:before { content: "\e076"; }
+
+/* line 117, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-step-forward:before { content: "\e077"; }
+
+/* line 118, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-eject:before { content: "\e078"; }
+
+/* line 119, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-chevron-left:before { content: "\e079"; }
+
+/* line 120, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-chevron-right:before { content: "\e080"; }
+
+/* line 121, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-plus-sign:before { content: "\e081"; }
+
+/* line 122, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-minus-sign:before { content: "\e082"; }
+
+/* line 123, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-remove-sign:before { content: "\e083"; }
+
+/* line 124, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-ok-sign:before { content: "\e084"; }
+
+/* line 125, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-question-sign:before { content: "\e085"; }
+
+/* line 126, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-info-sign:before { content: "\e086"; }
+
+/* line 127, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-screenshot:before { content: "\e087"; }
+
+/* line 128, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-remove-circle:before { content: "\e088"; }
+
+/* line 129, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-ok-circle:before { content: "\e089"; }
+
+/* line 130, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-ban-circle:before { content: "\e090"; }
+
+/* line 131, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-arrow-left:before { content: "\e091"; }
+
+/* line 132, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-arrow-right:before { content: "\e092"; }
+
+/* line 133, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-arrow-up:before { content: "\e093"; }
+
+/* line 134, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-arrow-down:before { content: "\e094"; }
+
+/* line 135, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-share-alt:before { content: "\e095"; }
+
+/* line 136, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-resize-full:before { content: "\e096"; }
+
+/* line 137, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-resize-small:before { content: "\e097"; }
+
+/* line 138, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-plus:before { content: "\002b"; }
+
+/* line 139, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-minus:before { content: "\2212"; }
+
+/* line 140, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-asterisk:before { content: "\002a"; }
+
+/* line 141, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-exclamation-sign:before { content: "\e101"; }
+
+/* line 142, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-gift:before { content: "\e102"; }
+
+/* line 143, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-leaf:before { content: "\e103"; }
+
+/* line 144, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-fire:before { content: "\e104"; }
+
+/* line 145, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-eye-open:before { content: "\e105"; }
+
+/* line 146, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-eye-close:before { content: "\e106"; }
+
+/* line 147, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-warning-sign:before { content: "\e107"; }
+
+/* line 148, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-plane:before { content: "\e108"; }
+
+/* line 149, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-calendar:before { content: "\e109"; }
+
+/* line 150, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-random:before { content: "\e110"; }
+
+/* line 151, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-comment:before { content: "\e111"; }
+
+/* line 152, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-magnet:before { content: "\e112"; }
+
+/* line 153, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-chevron-up:before { content: "\e113"; }
+
+/* line 154, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-chevron-down:before { content: "\e114"; }
+
+/* line 155, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-retweet:before { content: "\e115"; }
+
+/* line 156, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-shopping-cart:before { content: "\e116"; }
+
+/* line 157, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-folder-close:before { content: "\e117"; }
+
+/* line 158, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-folder-open:before { content: "\e118"; }
+
+/* line 159, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-resize-vertical:before { content: "\e119"; }
+
+/* line 160, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-resize-horizontal:before { content: "\e120"; }
+
+/* line 161, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-hdd:before { content: "\e121"; }
+
+/* line 162, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-bullhorn:before { content: "\e122"; }
+
+/* line 163, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-bell:before { content: "\e123"; }
+
+/* line 164, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-certificate:before { content: "\e124"; }
+
+/* line 165, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-thumbs-up:before { content: "\e125"; }
+
+/* line 166, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-thumbs-down:before { content: "\e126"; }
+
+/* line 167, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-hand-right:before { content: "\e127"; }
+
+/* line 168, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-hand-left:before { content: "\e128"; }
+
+/* line 169, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-hand-up:before { content: "\e129"; }
+
+/* line 170, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-hand-down:before { content: "\e130"; }
+
+/* line 171, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-circle-arrow-right:before { content: "\e131"; }
+
+/* line 172, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-circle-arrow-left:before { content: "\e132"; }
+
+/* line 173, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-circle-arrow-up:before { content: "\e133"; }
+
+/* line 174, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-circle-arrow-down:before { content: "\e134"; }
+
+/* line 175, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-globe:before { content: "\e135"; }
+
+/* line 176, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-wrench:before { content: "\e136"; }
+
+/* line 177, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-tasks:before { content: "\e137"; }
+
+/* line 178, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-filter:before { content: "\e138"; }
+
+/* line 179, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-briefcase:before { content: "\e139"; }
+
+/* line 180, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-fullscreen:before { content: "\e140"; }
+
+/* line 181, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-dashboard:before { content: "\e141"; }
+
+/* line 182, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-paperclip:before { content: "\e142"; }
+
+/* line 183, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-heart-empty:before { content: "\e143"; }
+
+/* line 184, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-link:before { content: "\e144"; }
+
+/* line 185, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-phone:before { content: "\e145"; }
+
+/* line 186, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-pushpin:before { content: "\e146"; }
+
+/* line 187, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-euro:before { content: "\20ac"; }
+
+/* line 188, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-usd:before { content: "\e148"; }
+
+/* line 189, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-gbp:before { content: "\e149"; }
+
+/* line 190, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-sort:before { content: "\e150"; }
+
+/* line 191, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-sort-by-alphabet:before { content: "\e151"; }
+
+/* line 192, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-sort-by-alphabet-alt:before { content: "\e152"; }
+
+/* line 193, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-sort-by-order:before { content: "\e153"; }
+
+/* line 194, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-sort-by-order-alt:before { content: "\e154"; }
+
+/* line 195, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-sort-by-attributes:before { content: "\e155"; }
+
+/* line 196, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-sort-by-attributes-alt:before { content: "\e156"; }
+
+/* line 197, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-unchecked:before { content: "\e157"; }
+
+/* line 198, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-expand:before { content: "\e158"; }
+
+/* line 199, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-collapse:before { content: "\e159"; }
+
+/* line 200, ../../sass/bootstrap/_glyphicons.scss */
+.glyphicon-collapse-top:before { content: "\e160"; }
+
 /* line 7, ../../sass/bootstrap/_wells.scss */
 .well { min-height: 20px; padding: 19px; margin-bottom: 20px; background-color: whitesmoke; border: 1px solid #e3e3e3; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
 /* line 15, ../../sass/bootstrap/_wells.scss */
@@ -1063,7 +1548,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="button"].btn-block { width: 100%; }
 
 /* line 139, ../../sass/bootstrap/_buttons.scss */
-.btn-primary.active, .btn-warning.active, .btn-danger.active, .ldrbd-admin .contestant-grid .existing .active.delete:hover, .ldrbd-admin .contestant-grid .existing .active.delete:focus, .btn-success.active, .ldrbd-admin .contestant-grid .existing .active.update:hover, .ldrbd-admin .contestant-grid .existing .active.update:focus, .btn-info.active, .btn-inverse.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary.active, .btn-warning.active, .btn-danger.active, .ldrbd-admin .contestant-grid .existing .active.delete:hover, .ldrbd-admin .contestant-grid .existing .active.delete:focus, .ldrbd-admin .contestant-grid .existing .active.add:hover, .ldrbd-admin .contestant-grid .existing .active.add:focus, .btn-success.active, .ldrbd-admin .contestant-grid .existing .active.update:hover, .ldrbd-admin .contestant-grid .existing .active.update:focus, .ldrbd-admin .contestant-grid .existing .active.subtract:hover, .ldrbd-admin .contestant-grid .existing .active.subtract:focus, .btn-info.active, .btn-inverse.active { color: rgba(255, 255, 255, 0.75); }
 
 /* line 145, ../../sass/bootstrap/_buttons.scss */
 .btn-primary { color: white; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #006ccc; background-image: -moz-linear-gradient(top, #0088cc, #0044cc); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc)); background-image: -webkit-linear-gradient(top, #0088cc, #0044cc); background-image: -o-linear-gradient(top, #0088cc, #0044cc); background-image: linear-gradient(to bottom, #0088cc, #0044cc); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF0088CC', endColorstr='#FF0044CC', GradientType=0); border-color: #0044cc #0044cc #002a80; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); *background-color: #0044cc; /* Darken IE7 buttons by default so they stand out more given they won't have borders */ filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
@@ -1080,18 +1565,18 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .btn-warning:active, .btn-warning.active { background-color: #c67605 \9; }
 
 /* line 153, ../../sass/bootstrap/_buttons.scss */
-.btn-danger, .ldrbd-admin .contestant-grid .existing .delete:hover, .ldrbd-admin .contestant-grid .existing .delete:focus { color: white; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #da4e49; background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f)); background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f); background-image: -o-linear-gradient(top, #ee5f5b, #bd362f); background-image: linear-gradient(to bottom, #ee5f5b, #bd362f); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEE5F5B', endColorstr='#FFBD362F', GradientType=0); border-color: #bd362f #bd362f #802420; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); *background-color: #bd362f; /* Darken IE7 buttons by default so they stand out more given they won't have borders */ filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
+.btn-danger, .ldrbd-admin .contestant-grid .existing .delete:hover, .ldrbd-admin .contestant-grid .existing .delete:focus, .ldrbd-admin .contestant-grid .existing .add:hover, .ldrbd-admin .contestant-grid .existing .add:focus { color: white; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #da4e49; background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f)); background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f); background-image: -o-linear-gradient(top, #ee5f5b, #bd362f); background-image: linear-gradient(to bottom, #ee5f5b, #bd362f); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEE5F5B', endColorstr='#FFBD362F', GradientType=0); border-color: #bd362f #bd362f #802420; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); *background-color: #bd362f; /* Darken IE7 buttons by default so they stand out more given they won't have borders */ filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
 /* line 503, ../../sass/bootstrap/_mixins.scss */
-.btn-danger:hover, .ldrbd-admin .contestant-grid .existing .delete:hover, .ldrbd-admin .contestant-grid .existing .delete:hover:focus, .btn-danger:focus, .ldrbd-admin .contestant-grid .existing .delete:focus:hover, .ldrbd-admin .contestant-grid .existing .delete:focus, .btn-danger:active, .ldrbd-admin .contestant-grid .existing .delete:active:hover, .ldrbd-admin .contestant-grid .existing .delete:active:focus, .btn-danger.active, .ldrbd-admin .contestant-grid .existing .active.delete:hover, .ldrbd-admin .contestant-grid .existing .active.delete:focus, .btn-danger.disabled, .ldrbd-admin .contestant-grid .existing .disabled.delete:hover, .ldrbd-admin .contestant-grid .existing .disabled.delete:focus, .btn-danger[disabled], .ldrbd-admin .contestant-grid .existing [disabled].delete:hover, .ldrbd-admin .contestant-grid .existing [disabled].delete:focus { color: white; background-color: #bd362f; *background-color: #a9302a; }
+.btn-danger:hover, .ldrbd-admin .contestant-grid .existing .delete:hover, .ldrbd-admin .contestant-grid .existing .delete:hover:focus, .ldrbd-admin .contestant-grid .existing .add:hover, .ldrbd-admin .contestant-grid .existing .add:hover:focus, .btn-danger:focus, .ldrbd-admin .contestant-grid .existing .delete:focus:hover, .ldrbd-admin .contestant-grid .existing .delete:focus, .ldrbd-admin .contestant-grid .existing .add:focus:hover, .ldrbd-admin .contestant-grid .existing .add:focus, .btn-danger:active, .ldrbd-admin .contestant-grid .existing .delete:active:hover, .ldrbd-admin .contestant-grid .existing .delete:active:focus, .ldrbd-admin .contestant-grid .existing .add:active:hover, .ldrbd-admin .contestant-grid .existing .add:active:focus, .btn-danger.active, .ldrbd-admin .contestant-grid .existing .active.delete:hover, .ldrbd-admin .contestant-grid .existing .active.delete:focus, .ldrbd-admin .contestant-grid .existing .active.add:hover, .ldrbd-admin .contestant-grid .existing .active.add:focus, .btn-danger.disabled, .ldrbd-admin .contestant-grid .existing .disabled.delete:hover, .ldrbd-admin .contestant-grid .existing .disabled.delete:focus, .ldrbd-admin .contestant-grid .existing .disabled.add:hover, .ldrbd-admin .contestant-grid .existing .disabled.add:focus, .btn-danger[disabled], .ldrbd-admin .contestant-grid .existing [disabled].delete:hover, .ldrbd-admin .contestant-grid .existing [disabled].delete:focus, .ldrbd-admin .contestant-grid .existing [disabled].add:hover, .ldrbd-admin .contestant-grid .existing [disabled].add:focus { color: white; background-color: #bd362f; *background-color: #a9302a; }
 /* line 511, ../../sass/bootstrap/_mixins.scss */
-.btn-danger:active, .ldrbd-admin .contestant-grid .existing .delete:active:hover, .ldrbd-admin .contestant-grid .existing .delete:active:focus, .btn-danger.active, .ldrbd-admin .contestant-grid .existing .active.delete:hover, .ldrbd-admin .contestant-grid .existing .active.delete:focus { background-color: #942a25 \9; }
+.btn-danger:active, .ldrbd-admin .contestant-grid .existing .delete:active:hover, .ldrbd-admin .contestant-grid .existing .delete:active:focus, .ldrbd-admin .contestant-grid .existing .add:active:hover, .ldrbd-admin .contestant-grid .existing .add:active:focus, .btn-danger.active, .ldrbd-admin .contestant-grid .existing .active.delete:hover, .ldrbd-admin .contestant-grid .existing .active.delete:focus, .ldrbd-admin .contestant-grid .existing .active.add:hover, .ldrbd-admin .contestant-grid .existing .active.add:focus { background-color: #942a25 \9; }
 
 /* line 157, ../../sass/bootstrap/_buttons.scss */
-.btn-success, .ldrbd-admin .contestant-grid .existing .update:hover, .ldrbd-admin .contestant-grid .existing .update:focus { color: white; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #5bb65b; background-image: -moz-linear-gradient(top, #62c462, #51a351); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351)); background-image: -webkit-linear-gradient(top, #62c462, #51a351); background-image: -o-linear-gradient(top, #62c462, #51a351); background-image: linear-gradient(to bottom, #62c462, #51a351); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF62C462', endColorstr='#FF51A351', GradientType=0); border-color: #51a351 #51a351 #387038; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); *background-color: #51a351; /* Darken IE7 buttons by default so they stand out more given they won't have borders */ filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
+.btn-success, .ldrbd-admin .contestant-grid .existing .update:hover, .ldrbd-admin .contestant-grid .existing .update:focus, .ldrbd-admin .contestant-grid .existing .subtract:hover, .ldrbd-admin .contestant-grid .existing .subtract:focus { color: white; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #5bb65b; background-image: -moz-linear-gradient(top, #62c462, #51a351); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351)); background-image: -webkit-linear-gradient(top, #62c462, #51a351); background-image: -o-linear-gradient(top, #62c462, #51a351); background-image: linear-gradient(to bottom, #62c462, #51a351); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF62C462', endColorstr='#FF51A351', GradientType=0); border-color: #51a351 #51a351 #387038; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); *background-color: #51a351; /* Darken IE7 buttons by default so they stand out more given they won't have borders */ filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
 /* line 503, ../../sass/bootstrap/_mixins.scss */
-.btn-success:hover, .ldrbd-admin .contestant-grid .existing .update:hover, .ldrbd-admin .contestant-grid .existing .update:hover:focus, .btn-success:focus, .ldrbd-admin .contestant-grid .existing .update:focus:hover, .ldrbd-admin .contestant-grid .existing .update:focus, .btn-success:active, .ldrbd-admin .contestant-grid .existing .update:active:hover, .ldrbd-admin .contestant-grid .existing .update:active:focus, .btn-success.active, .ldrbd-admin .contestant-grid .existing .active.update:hover, .ldrbd-admin .contestant-grid .existing .active.update:focus, .btn-success.disabled, .ldrbd-admin .contestant-grid .existing .disabled.update:hover, .ldrbd-admin .contestant-grid .existing .disabled.update:focus, .btn-success[disabled], .ldrbd-admin .contestant-grid .existing [disabled].update:hover, .ldrbd-admin .contestant-grid .existing [disabled].update:focus { color: white; background-color: #51a351; *background-color: #499249; }
+.btn-success:hover, .ldrbd-admin .contestant-grid .existing .update:hover, .ldrbd-admin .contestant-grid .existing .update:hover:focus, .ldrbd-admin .contestant-grid .existing .subtract:hover, .ldrbd-admin .contestant-grid .existing .subtract:hover:focus, .btn-success:focus, .ldrbd-admin .contestant-grid .existing .update:focus:hover, .ldrbd-admin .contestant-grid .existing .update:focus, .ldrbd-admin .contestant-grid .existing .subtract:focus:hover, .ldrbd-admin .contestant-grid .existing .subtract:focus, .btn-success:active, .ldrbd-admin .contestant-grid .existing .update:active:hover, .ldrbd-admin .contestant-grid .existing .update:active:focus, .ldrbd-admin .contestant-grid .existing .subtract:active:hover, .ldrbd-admin .contestant-grid .existing .subtract:active:focus, .btn-success.active, .ldrbd-admin .contestant-grid .existing .active.update:hover, .ldrbd-admin .contestant-grid .existing .active.update:focus, .ldrbd-admin .contestant-grid .existing .active.subtract:hover, .ldrbd-admin .contestant-grid .existing .active.subtract:focus, .btn-success.disabled, .ldrbd-admin .contestant-grid .existing .disabled.update:hover, .ldrbd-admin .contestant-grid .existing .disabled.update:focus, .ldrbd-admin .contestant-grid .existing .disabled.subtract:hover, .ldrbd-admin .contestant-grid .existing .disabled.subtract:focus, .btn-success[disabled], .ldrbd-admin .contestant-grid .existing [disabled].update:hover, .ldrbd-admin .contestant-grid .existing [disabled].update:focus, .ldrbd-admin .contestant-grid .existing [disabled].subtract:hover, .ldrbd-admin .contestant-grid .existing [disabled].subtract:focus { color: white; background-color: #51a351; *background-color: #499249; }
 /* line 511, ../../sass/bootstrap/_mixins.scss */
-.btn-success:active, .ldrbd-admin .contestant-grid .existing .update:active:hover, .ldrbd-admin .contestant-grid .existing .update:active:focus, .btn-success.active, .ldrbd-admin .contestant-grid .existing .active.update:hover, .ldrbd-admin .contestant-grid .existing .active.update:focus { background-color: #408140 \9; }
+.btn-success:active, .ldrbd-admin .contestant-grid .existing .update:active:hover, .ldrbd-admin .contestant-grid .existing .update:active:focus, .ldrbd-admin .contestant-grid .existing .subtract:active:hover, .ldrbd-admin .contestant-grid .existing .subtract:active:focus, .btn-success.active, .ldrbd-admin .contestant-grid .existing .active.update:hover, .ldrbd-admin .contestant-grid .existing .active.update:focus, .ldrbd-admin .contestant-grid .existing .active.subtract:hover, .ldrbd-admin .contestant-grid .existing .active.subtract:focus { background-color: #408140 \9; }
 
 /* line 161, ../../sass/bootstrap/_buttons.scss */
 .btn-info { color: white; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #49afcd; background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4)); background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4); background-image: -o-linear-gradient(top, #5bc0de, #2f96b4); background-image: linear-gradient(to bottom, #5bc0de, #2f96b4); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF5BC0DE', endColorstr='#FF2F96B4', GradientType=0); border-color: #2f96b4 #2f96b4 #1f6377; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); *background-color: #2f96b4; /* Darken IE7 buttons by default so they stand out more given they won't have borders */ filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
@@ -1200,9 +1685,9 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini { *padding-top: 1px; *pad
 /* line 143, ../../sass/bootstrap/_button-groups.scss */
 .btn-group.open .btn-warning.dropdown-toggle { background-color: #f89406; }
 /* line 146, ../../sass/bootstrap/_button-groups.scss */
-.btn-group.open .btn-danger.dropdown-toggle, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.delete:hover, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.delete:hover, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.delete:focus, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.delete:focus { background-color: #bd362f; }
+.btn-group.open .btn-danger.dropdown-toggle, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.delete:hover, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.delete:hover, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.delete:focus, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.delete:focus, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.add:hover, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.add:hover, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.add:focus, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.add:focus { background-color: #bd362f; }
 /* line 149, ../../sass/bootstrap/_button-groups.scss */
-.btn-group.open .btn-success.dropdown-toggle, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.update:hover, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.update:hover, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.update:focus, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.update:focus { background-color: #51a351; }
+.btn-group.open .btn-success.dropdown-toggle, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.update:hover, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.update:hover, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.update:focus, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.update:focus, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.subtract:hover, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.subtract:hover, .btn-group.open .ldrbd-admin .contestant-grid .existing .dropdown-toggle.subtract:focus, .ldrbd-admin .contestant-grid .existing .btn-group.open .dropdown-toggle.subtract:focus { background-color: #51a351; }
 /* line 152, ../../sass/bootstrap/_button-groups.scss */
 .btn-group.open .btn-info.dropdown-toggle { background-color: #2f96b4; }
 /* line 155, ../../sass/bootstrap/_button-groups.scss */
@@ -1224,7 +1709,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini { *padding-top: 1px; *pad
 .dropup .btn-large .caret { border-bottom-width: 5px; }
 
 /* line 193, ../../sass/bootstrap/_button-groups.scss */
-.btn-primary .caret, .btn-warning .caret, .btn-danger .caret, .ldrbd-admin .contestant-grid .existing .delete:hover .caret, .ldrbd-admin .contestant-grid .existing .delete:focus .caret, .btn-info .caret, .btn-success .caret, .ldrbd-admin .contestant-grid .existing .update:hover .caret, .ldrbd-admin .contestant-grid .existing .update:focus .caret, .btn-inverse .caret { border-top-color: white; border-bottom-color: white; }
+.btn-primary .caret, .btn-warning .caret, .btn-danger .caret, .ldrbd-admin .contestant-grid .existing .delete:hover .caret, .ldrbd-admin .contestant-grid .existing .delete:focus .caret, .ldrbd-admin .contestant-grid .existing .add:hover .caret, .ldrbd-admin .contestant-grid .existing .add:focus .caret, .btn-info .caret, .btn-success .caret, .ldrbd-admin .contestant-grid .existing .update:hover .caret, .ldrbd-admin .contestant-grid .existing .update:focus .caret, .ldrbd-admin .contestant-grid .existing .subtract:hover .caret, .ldrbd-admin .contestant-grid .existing .subtract:focus .caret, .btn-inverse .caret { border-top-color: white; border-bottom-color: white; }
 
 /* line 204, ../../sass/bootstrap/_button-groups.scss */
 .btn-group-vertical { display: inline-block; *display: inline; /* IE7 inline-block hack */ *zoom: 1; }
@@ -2259,48 +2744,52 @@ body { color: #333333; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); -webkit-us
 
 /* line 6, ../../sass/partials/_admin.scss */
 .ldrbd-admin { padding-top: 60px; }
-/* line 11, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid { table-layout: fixed; }
-/* line 13, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .actions { width: 140px; min-width: 140px; max-width: 140px; }
-/* line 20, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .actions .btn:hover, .ldrbd-admin .contestant-grid .actions .btn:focus { outline: 0; opacity: 1; }
-/* line 29, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .new td, .ldrbd-admin .contestant-grid .new th { border-top-color: #f9edc1; border-bottom: 1px solid #faf2cd; background-color: #fefbe4; }
-/* line 35, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .new:hover td, .ldrbd-admin .contestant-grid .new:hover th { background-color: #fdf7cb; }
+/* line 12, ../../sass/partials/_admin.scss */
+.ldrbd-admin input:focus { outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+/* line 19, ../../sass/partials/_admin.scss */
+.ldrbd-admin .btn:focus { outline: 0; }
+/* line 23, ../../sass/partials/_admin.scss */
+.ldrbd-admin .btn .glyphicon:before { margin: 0; vertical-align: middle; }
+/* line 33, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid td.actions { width: 85px; min-width: 85px; max-width: 85px; }
 /* line 37, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid td.actions .text { display: none; }
+/* line 39, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid td.actions .create { width: 79px; }
+/* line 45, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid td.actions .btn:hover, .ldrbd-admin .contestant-grid td.actions .btn:focus { outline: 0; opacity: 1; }
+/* line 55, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .new td, .ldrbd-admin .contestant-grid .new th { border-top-color: #f9edc1; border-bottom: 1px solid #faf2cd; background-color: #fefbe4; }
+/* line 61, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .new:hover td, .ldrbd-admin .contestant-grid .new:hover th { background-color: #fdf7cb; }
+/* line 63, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .new input { font-weight: bold; }
-/* line 38, ../../sass/partials/_admin.scss */
+/* line 64, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .new .btn { width: 100%; display: block; opacity: .8; }
-/* line 42, ../../sass/partials/_admin.scss */
+/* line 68, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .new + .existing td, .ldrbd-admin .contestant-grid .new + .existing th { -webkit-box-shadow: inset 0 1px 0 0 white; -moz-box-shadow: inset 0 1px 0 0 white; box-shadow: inset 0 1px 0 0 white; }
-/* line 52, ../../sass/partials/_admin.scss */
+/* line 78, ../../sass/partials/_admin.scss */
 .ldrbd-admin .contestant-grid .existing .delete, .ldrbd-admin .contestant-grid .existing .update { color: #999999; }
-/* line 70, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .input-append { width: 96%; height: 100%; position: relative; margin: 0; }
-/* line 75, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .input-append input { width: 98%; border-right: 0 none; position: static; padding-right: 39px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 30px; }
-/* line 83, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .input-append .btn-group { position: absolute; z-index: 3; right: 0; }
+/* line 80, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .existing .delete .text, .ldrbd-admin .contestant-grid .existing .update .text { margin-left: 4px; }
+/* line 84, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .existing .add { color: #468847; }
+/* line 86, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .existing .add .caret { border-bottom-color: #468847; }
+/* line 90, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .existing .subtract { color: #b94a48; }
 /* line 92, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .score .input-append input { padding-right: 78px; }
-/* line 96, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .score .input-append .btn-group .btn { min-width: 40px; }
-/* line 99, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .score .input-append .btn-group .btn:first-child { -moz-border-radius-topleft: 0; -webkit-border-top-left-radius: 0; border-top-left-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-left-radius: 0; border-bottom-left-radius: 0; }
-/* line 110, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical { height: 30px; }
-/* line 112, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn { min-width: 40px; height: 15px; line-height: 15px; padding: 0; }
-/* line 118, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn:first-child { -moz-border-radius-topleft: 0; -webkit-border-top-left-radius: 0; border-top-left-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-left-radius: 0; border-bottom-left-radius: 0; }
-/* line 121, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn:last-child { margin-top: 0; -moz-border-radius-topright: 0; -webkit-border-top-right-radius: 0; border-top-right-radius: 0; }
-/* line 126, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn .caret { margin: 5px 0 0 0; }
-/* line 128, ../../sass/partials/_admin.scss */
-.ldrbd-admin .contestant-grid .lane .input-append .btn-group-vertical .btn .caret.up { border-top-width: 0; border-bottom-width: 4px; border-bottom-style: solid; border-bottom-color: #000; }
+.ldrbd-admin .contestant-grid .existing .subtract .caret { border-top-color: #b94a48; }
+/* line 117, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .input-append { white-space: normal; width: 96%; height: 100%; position: relative; margin: 0; }
+/* line 123, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .input-append input { width: 98%; border-right: 0 none; position: static; padding-right: 78px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 30px; }
+/* line 132, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .input-append .btn-group { position: absolute; z-index: 3; right: 0; }
+/* line 136, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .input-append .btn-group .btn { min-width: 40px; font-weight: bold; }
+/* line 140, ../../sass/partials/_admin.scss */
+.ldrbd-admin .contestant-grid .input-append .btn-group .btn:first-child { -moz-border-radius-topleft: 0; -webkit-border-top-left-radius: 0; border-top-left-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-left-radius: 0; border-bottom-left-radius: 0; }
 
 @-ms-viewport { width: device-width; }
 

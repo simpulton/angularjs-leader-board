@@ -40,25 +40,27 @@
                             <thead>
                                 <tr>
                                     <th class="name">Contestant</th>
-                                    <th class="score" width="20%">Lane</th>
-                                    <th class="score" width="20%">Score</th>
+                                    <th class="score">Lane</th>
+                                    <th class="score">Score</th>
                                     <th class="actions"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="new">
                                     <td class="name">
-                                        <input name="contestantName" ng-model="display_name" type="text" required>
+                                        <input name="contestantName" ng-model="display_name" type="text">
                                     </td>
                                     <td class="lane">
-                                        <input name="contestantLane" ng-model="lane" type="text" required>
+                                        <input name="contestantLane" ng-model="lane" type="text">
                                     </td>
                                     <td class="score">
-                                        <input name="contestantScore" ng-model="score" type="text" required>
+                                        <input name="contestantScore" ng-model="score" type="text">
                                     </td>
                                     <td class="actions">
                                         <div class="btn-group pull-right">
-                                            <button ng-click="createContestant(display_name, lane, score);display_name='';lane='';score=''" class="btn btn-success" 
+                                            <button class="btn btn-success create" 
+                                                    title="Create Contestant"
+                                                    ng-click="createContestant(display_name, lane, score);display_name='';lane='';score=''" 
                                                     ng-disabled="
                                                         ldrbd.contestantName.$error.required || 
                                                         ldrbd.contestantLane.$error.required || 
@@ -72,37 +74,39 @@
                                 </tr>
                                 <tr class="existing" ng-repeat="contestant in contestants | orderBy:'display_name'" contestant="contestant" ondelete="deleteContestant(id)">
                                     <td class="name">
-                                        <input name="contestantName_{{ contestant.id }}" ng-model="contestant.display_name" type="text" required>
+                                        <input name="contestantName_{{ contestant.id }}" ng-model="contestant.display_name" type="text">
                                     </td>
                                     <td class="lane">
                                         <div class="input-append">
-                                            <input name="contestantLane_{{ contestant.id }}" ng-model="contestant.lane" type="text" required>
-                                            <div class="btn-group btn-group-vertical">
-                                                <button class="btn"><b class="caret up"></b></button>
-                                                <button class="btn"><b class="caret down"></b></button>
+                                            <input name="contestantLane_{{ contestant.id }}" ng-model="contestant.lane" type="text">
+                                            <div class="btn-group">
+                                                <button class="btn subtract" title="Decrease Lane Number">&mdash;</button>
+                                                <button class="btn add" title="Increase Lane Number">&#043;</button>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="score">
                                         <div class="input-append">
-                                            <input name="contestantScore_{{ contestant.id }}" ng-model="contestant.score" type="text" required>
+                                            <input name="contestantScore_{{ contestant.id }}" ng-model="contestant.score" type="text">
                                             <div class="btn-group">
-                                                <button class="btn btn-success">&#043;</button>
-                                                <button class="btn btn-danger">&mdash;</button>
+                                                <button class="btn subtract" title="Subtract 1 Point">&mdash;</button>
+                                                <button class="btn add" title="Add 1 Point">&#043;</button>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="actions">
                                         <div class="btn-group pull-right">
-                                            <button ng-click="deleteContestant(contestant.id)" class="btn delete">Delete</button>
-                                            <button ng-click="updateContestant(contestant)" class="btn update"
+                                            <button ng-click="deleteContestant(contestant.id)" class="btn delete" title="Delete Contestant">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                            </button>
+                                            <button ng-click="updateContestant(contestant)" class="btn update" title="Update Contestant"
                                                     ng-disabled="
                                                         ldrbd.contestantName_{{ contestant.id }}.$error.required || 
                                                         ldrbd.contestantLane_{{ contestant.id }}.$error.required || 
                                                         ldrbd.contestantScore_{{ contestant.id }}.$error.required
                                                     "
                                             >
-                                                Update
+                                                <i class="glyphicon glyphicon-ok"></i>
                                             </button>
                                         </div>
                                     </td>

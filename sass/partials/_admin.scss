@@ -8,18 +8,44 @@ $btnBorderWidth: 1px;
     padding-top: $navbarHeight + $gridGutterWidth;
 }
 
-.contestant-grid {
-    table-layout: fixed;
-    .actions {
-        width: 140px;
-        min-width: 140px;
-        max-width: 140px;
+input {
+    &:focus {
+        outline: 0;
+        // inset box shadow only - no "glow" on focus
+        @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    }
+}
+.btn {
+    &:focus {
+        outline: 0;
+    }
+    .glyphicon {
+        &:before {
+            margin: 0;
+            vertical-align: middle;
+        }
+    }
+}
 
-        .btn {
-            &:hover, 
-            &:focus {
-                outline: 0;
-                opacity: 1;
+.contestant-grid {
+
+    td {
+        &.actions {
+            width: 85px;
+            min-width: 85px;
+            max-width: 85px;
+            .text { display: none; }
+
+            .create {
+                width: 79px; // match the width of the two little delete/update icon buttons
+            }
+
+            .btn {
+                &:hover, 
+                &:focus {
+                    outline: 0;
+                    opacity: 1;
+                }
             }
         }
     }
@@ -51,23 +77,45 @@ $btnBorderWidth: 1px;
     .existing {
         .delete, .update {
             color: $grayLight;
+            .text {
+                margin-left: 4px; // space out from icon
+            }
         }
-        .delete {
+        .add { 
+            color: $successText; 
+            .caret {
+                border-bottom-color: $successText;
+            }
+        }
+        .subtract { 
+            color: $errorText; 
+            .caret {
+                border-top-color: $errorText;
+            }
+        }
+        .delete, .add {
             &:hover,
             &:focus {
                 @extend .btn-danger;
+                .icon {
+                    @extend .icon-white;
+                }
             }
         }
-        .update {
+        .update, .subtract {
             &:hover,
             &:focus {
                 @extend .btn-success;
+                .icon {
+                    @extend .icon-white;
+                }
             }
         }
     }
 
     // appended inputs
     .input-append {
+        white-space: normal; // allow the table cells to resize natively
         width: 96%;
         height: 100%;
         position: relative;
@@ -76,64 +124,57 @@ $btnBorderWidth: 1px;
             width: 98%;
             border-right: 0 none;
             position: static;
-            padding-right: 40px - $btnBorderWidth;
+            padding-right: 80px - ($btnBorderWidth * 2); // there are two horizontally-aligned buttons
             @include box-sizing(border-box);
             height: $inputHeight;
         }
+        // horizontally aligned spin buttons (-/+)
         .btn-group {
             position: absolute;
             z-index: 3; // keep above input even when its focused
             right: 0;
-        }
-    }
-
-    // horizontal spin buttons (for increasing/lowering score)
-    .score .input-append {
-        input {
-            padding-right: 80px - ($btnBorderWidth * 2); // there are two horizontally-aligned buttons
-        }
-        .btn-group {
             .btn {
                 // keep them the same width
                 min-width: 40px;
+                font-weight: bold;
                 &:first-child {
                     @include border-left-radius(0);
                 }
             }
         }
     }
+
     // vertically stacked spin buttons (for increasing/lowering lane #)
-    .lane .input-append {
-        // input { 
-        //     width: 84%;
-        // }
-        .btn-group-vertical {
-            height: $inputHeight;
-            .btn {
-                min-width: 40px;
-                height: $inputHeight / 2;
-                line-height: $inputHeight / 2;
-                padding: 0;
+    // .lane .input-append {
+    //     // input { 
+    //     //     width: 84%;
+    //     // }
+    //     .btn-group-vertical {
+    //         height: $inputHeight;
+    //         .btn {
+    //             min-width: 40px;
+    //             height: $inputHeight / 2;
+    //             line-height: $inputHeight / 2;
+    //             padding: 0;
 
-                &:first-child {
-                    @include border-left-radius(0);
-                }
-                &:last-child {
-                    margin-top: 0;
-                    @include border-top-right-radius(0);
-                }
+    //             &:first-child {
+    //                 @include border-left-radius(0);
+    //             }
+    //             &:last-child {
+    //                 margin-top: 0;
+    //                 @include border-top-right-radius(0);
+    //             }
 
-                .caret {
-                    margin: 5px 0 0 0;
-                    &.up {
-                        // rotate it
-                        border-top-width: 0;
-                        border-bottom-width: 4px;
-                        border-bottom-style: solid;
-                        border-bottom-color: #000;
-                    }
-                }
-            }
-        }
-    } // END spin buttons
+    //             .caret {
+    //                 margin: 5px 0 0 0;
+    //                 &.up {
+    //                     // rotate it
+    //                     border-top-width: 0;
+    //                     border-bottom-width: 4px;
+    //                     border-bottom-style: solid;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // } // END spin buttons
 }
