@@ -7,12 +7,12 @@
 # =================================================
 #   ASSET STRUCTURE     
 # =================================================
-    http_path = "public"
-    css_dir = "public/css"
-    images_dir = "public/images"
-    javascripts_dir = "public/js"
-
-    sass_dir = "sass"
+    http_path           = "public"
+    css_dir             = "public/css"
+    images_dir          = "public/images"
+    javascripts_dir     = "public/js"
+    fonts_dir           = "public/fonts"
+    sass_dir            = "sass"
 
 # =================================================
 #   COMPILE / BUILD OPTIONS
