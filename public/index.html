@@ -17,47 +17,49 @@
         </header>
         <div class="ldr-list-wrapper" role="structure"
              ng-class="{twocol: shouldShowTwoColumns()}">
-            <div class="ldr-list table table-hover" role="grid">
-                <div class="thead" role="rowheader">
-                    <div class="tr" role="row">
-                        <div class="th pic"></div>
-                        <div class="th name"><div class="clip-text">Contestant</div></div>
-                        <div class="th lane"><div class="clip-text">Lane</div></div>
-                        <div class="th score"><div class="clip-text">Score</div></div>
-                    </div>
-                </div>
-                <div class="tbody" role="rowgroup">
-                    <div class="tr" role="row"
-                         data-ng-repeat="contestant in rightContestants" 
-                         data-contestant="contestant">
-                        <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
-                        <div class="td name" role="gridcell" title="{{contestant.display_name}}">
-                            <div class="clip-text">{{contestant.display_name}}</div>
+            <div class="ldr-list-bg">
+                <div class="ldr-list table table-hover" role="grid">
+                    <div class="thead" role="rowheader">
+                        <div class="tr" role="row">
+                            <div class="th pic"></div>
+                            <div class="th name"><div class="clip-text">Contestant</div></div>
+                            <div class="th lane"><div class="clip-text">Lane</div></div>
+                            <div class="th score"><div class="clip-text">Score</div></div>
                         </div>
-                        <div class="td lane" role="gridcell" title="{{contestant.lane}}"><div class="clip-text">{{contestant.lane}}</div></div>
-                        <div class="td score" role="gridcell" title="{{contestant.score}}"><div class="clip-text">{{contestant.score}}</div></div>
                     </div>
-                </div>
-            </div>
-            <div class="ldr-list table table-hover" role="grid">
-                <div class="thead" role="rowheader">
-                    <div class="tr" role="row">
-                        <div class="th pic"></div>
-                        <div class="th name"><div class="clip-text">Contestant</div></div>
-                        <div class="th lane"><div class="clip-text">Lane</div></div>
-                        <div class="th score"><div class="clip-text">Score</div></div>
-                    </div>
-                </div>
-                <div class="tbody" role="rowgroup">
-                    <div class="tr" role="row"
-                         data-ng-repeat="contestant in leftContestants" 
-                         data-contestant="contestant">
-                        <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
-                        <div class="td name" role="gridcell" title="{{contestant.display_name}}">
-                            <div class="clip-text">{{contestant.display_name}}</div>
+                    <div class="tbody" role="rowgroup">
+                        <div class="tr" role="row"
+                             data-ng-repeat="contestant in rightContestants" 
+                             data-contestant="contestant">
+                            <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
+                            <div class="td name" role="gridcell" title="{{contestant.display_name}}">
+                                <div class="clip-text">{{contestant.display_name}}</div>
+                            </div>
+                            <div class="td lane" role="gridcell" title="{{contestant.lane}}"><div class="clip-text">{{contestant.lane}}</div></div>
+                            <div class="td score" role="gridcell" title="{{contestant.score}}"><div class="clip-text">{{contestant.score}}</div></div>
                         </div>
-                        <div class="td lane" role="gridcell" title="{{contestant.lane}}"><div class="clip-text">{{contestant.lane}}</div></div>
-                        <div class="td score" role="gridcell" title="{{contestant.score}}"><div class="clip-text">{{contestant.score}}</div></div>
+                    </div>
+                </div>
+                <div class="ldr-list table table-hover" role="grid">
+                    <div class="thead" role="rowheader">
+                        <div class="tr" role="row">
+                            <div class="th pic"></div>
+                            <div class="th name"><div class="clip-text">Contestant</div></div>
+                            <div class="th lane"><div class="clip-text">Lane</div></div>
+                            <div class="th score"><div class="clip-text">Score</div></div>
+                        </div>
+                    </div>
+                    <div class="tbody" role="rowgroup">
+                        <div class="tr" role="row"
+                             data-ng-repeat="contestant in leftContestants" 
+                             data-contestant="contestant">
+                            <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
+                            <div class="td name" role="gridcell" title="{{contestant.display_name}}">
+                                <div class="clip-text">{{contestant.display_name}}</div>
+                            </div>
+                            <div class="td lane" role="gridcell" title="{{contestant.lane}}"><div class="clip-text">{{contestant.lane}}</div></div>
+                            <div class="td score" role="gridcell" title="{{contestant.score}}"><div class="clip-text">{{contestant.score}}</div></div>
+                        </div>
                     </div>
                 </div>
             </div>

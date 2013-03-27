@@ -103,13 +103,24 @@ footer {
 
 } // END <footer>
 
+.ldr-list-wrapper, .ldr-list-bg {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.ldr-list-bg {
+    background-color: darken($widgetRowBg, 1.5%);
+    // add a left/right border so that if there ar less than 20 participants - the widget still has "bounds"
+    // this means the last table in the widget won't need a right border
+    border-right: 1px solid darken($tableBorder, 10);
+    border-left: 1px solid darken($tableBorder, 10);
+}
+
 .ldr-list-wrapper {
     // this background color MUST be transparent in order for the ribbon corners to show
     background-color: transparent;
-    width: 100%;
     padding: 0 $wrapperPad;
-    position: relative;
-    float: left;
     z-index: $headerRibbonCornerZindex + 1; // keep above ribbon corners
 
     // it is possible for our widget to display $n tables side-by-side
@@ -125,6 +136,14 @@ footer {
             display: table; // first one should always show
             left: 0;
             right: auto;
+            border-left: 0 none; // see .ldr-list-bg border-left above
+        }
+        &:last-child {
+            // no left borders on the right table
+            border-left: 0 none;
+            border-right: 0 none; // see .ldr-list-bg border-right above
+            // add a bottom border so the last item doesn't lack the "chisel" effect
+            border-bottom: 1px solid $tableBorder;
         }
     }
     // more than 10 contestants displayed... display additional table
