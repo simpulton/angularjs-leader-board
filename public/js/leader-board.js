@@ -2,8 +2,8 @@ var app = angular.module('app', []);
 
 app.directive('contestant', function(socket) {
 	var linker = function(scope, element, attrs) {
-			element.hide().fadeIn();
-		};
+		element.hide().fadeIn();
+	};
 
 	var controller = function($scope) {
 			// Incoming
@@ -11,11 +11,32 @@ app.directive('contestant', function(socket) {
 				// Update if the same contestant
 				if(data.id == $scope.contestant.id) {
 					$scope.contestant.display_name = data.display_name;
+					$scope.contestant.lane = Number(data.lane);
 					$scope.contestant.score = Number(data.score);
 				}
 			});
 
 			// Outgoing
+			$scope.incrementLane = function(contestant) {
+				contestant.lane++;
+				$scope.updateContestant(contestant);
+			};
+
+			$scope.decrementLane = function(contestant) {
+				contestant.lane--;
+				$scope.updateContestant(contestant);
+			};
+			
+			$scope.incrementScore = function(contestant) {
+				contestant.score++;
+				$scope.updateContestant(contestant);
+			};
+
+			$scope.decrementScore = function(contestant) {
+				contestant.score--;
+				$scope.updateContestant(contestant);
+			};
+
 			$scope.updateContestant = function(contestant) {
 				socket.emit('updateContestant', contestant);
 			};
@@ -27,16 +48,16 @@ app.directive('contestant', function(socket) {
 			};
 		};
 
-	return {
-		restrict: 'A',
-		link: linker,
-		controller: controller,
-		scope: {
-			contestant: '=',
-			ondelete: '&'
-		}
-	};
-});
+		return {
+			restrict: 'A',
+			link: linker,
+			controller: controller,
+			scope: {
+				contestant: '=',
+				ondelete: '&'
+			}
+		};
+	});
 
 app.factory('socket', function($rootScope) {
 	var socket = io.connect();
@@ -65,12 +86,12 @@ app.factory('socket', function($rootScope) {
 app.controller('MainCtrl', function($scope, socket) {
 	$scope.contestants = [];
 
-  socket.emit('listContestants');
+	socket.emit('listContestants');
 
 	// Incoming
-  socket.on('onContestantsListed', function(data) {
-    $scope.contestants.push.apply($scope.contestants, data);
-  });
+	socket.on('onContestantsListed', function(data) {
+		$scope.contestants.push.apply($scope.contestants, data);
+	});
 
 	socket.on('onContestantCreated', function(data) {
 		$scope.contestants.push(data);
@@ -83,14 +104,15 @@ app.controller('MainCtrl', function($scope, socket) {
 	var _resetFormValidation = function() {
 		$("input:first").focus();
 		var $dirtyInputs = $("#ldrbd").find(".new input.ng-dirty")
-									  .removeClass("ng-dirty")
-									  .addClass("ng-pristine");
+		.removeClass("ng-dirty")
+		.addClass("ng-pristine");
 	};
 
 	// Outgoing
-	$scope.createContestant = function(display_name, score) {
+	$scope.createContestant = function(display_name, lane, score) {
 		var contestant = {
 			id: new Date().getTime(),
+			lane: lane,
 			display_name: display_name,
 			score: Number(score)
 		};
@@ -125,7 +147,6 @@ app.controller('MainCtrl', function($scope, socket) {
 
 // misc form validation stuff
 $(function(){
-
 	setTimeout(function(){
 		// wait till angular is done populating the list
 
@@ -135,11 +156,11 @@ $(function(){
 		var $requiredInputs = $("#ldrbd").find("input[required]:not('.ng-dirty')");
 		$requiredInputs.on("blur", function(){
 			$(this)
-				.removeClass("ng-pristine")
-				.addClass("ng-dirty")
-				.attr({
-					placeholder: "Required"
-				});
+			.removeClass("ng-pristine")
+			.addClass("ng-dirty")
+			.attr({
+				placeholder: "Required"
+			});
 
 		});
 	}, 100);
