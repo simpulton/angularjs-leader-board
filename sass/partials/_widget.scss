@@ -83,6 +83,9 @@ footer {
 
     // keep above .ldr-list-wrapper so we can drop a shadow on it
     position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
     z-index: $headerRibbonCornerZindex + 2; 
     color: darken($footerBg, 40);
     text-align: center;
@@ -106,7 +109,33 @@ footer {
     width: 100%;
     padding: 0 $wrapperPad;
     position: relative;
+    float: left;
     z-index: $headerRibbonCornerZindex + 1; // keep above ribbon corners
+
+    // it is possible for our widget to display $n tables side-by-side
+    $rowColWidth: 100% / $widgetCols; // how wide is each row?
+    .ldr-list {
+        display: none;
+        float: left;
+        position: relative;
+        left: auto;
+        right: 0;
+        top: 0;
+        &:first-child {
+            display: table; // first one should always show
+            left: 0;
+            right: auto;
+        }
+    }
+    // more than 10 contestants displayed... display additional table
+    // two tables side-by-side
+    &.twocol {
+        .ldr-list {
+            display: table; // show all
+            width: $rowColWidth;
+        }
+    }
+
 }
 
 .ldr-list {
@@ -171,25 +200,28 @@ footer {
     .name {
         // this one scales to take up all available width
         left: $picWidth;
-        right: $scoreWidth;
+        right: $scoreWidth * 2; // score and lane
     }
-    .score {
+    // lane and score are the same size
+    .lane, .score {
         width: $scoreWidth;
         min-width: $scoreWidth;
-        right: 0;
         text-align: center;
         font-weight: bold;
+    }
+    .lane  { right: $scoreWidth; }
+    .score { right: 0;
 
         &, .clip-text {
             @include transition(width 0s linear .3s);
         }
-
-        // if the score is truncated and the user hovers over it for 300ms or more... reveal the entire score
         &:hover {
             &, .clip-text {
                 // slightly shorter delay when hovering out
                 @include transition-delay(.1s);
             }
+            // if the score is truncated and the user hovers 
+            // over it for 300ms or more... reveal the entire score
             width: auto;
         }
     }

@@ -1,5 +1,6 @@
 .ng-cloak, [ng-cloak], [data-ng-cloak] { display: none; }
 
+$widgetCols: 2; // how many columns are we using to display all the scores?
 $usersHaveAvatars: false;
 $widgetHasFooter: true;
 $widgetWidth: 100%;

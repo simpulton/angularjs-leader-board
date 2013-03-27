@@ -2676,25 +2676,25 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus { color: white; text-
 /* line 1, ../../sass/partials/_globals.scss */
 .ng-cloak, [ng-cloak], [data-ng-cloak] { display: none; }
 
-/* line 22, ../../sass/partials/_globals.scss */
+/* line 23, ../../sass/partials/_globals.scss */
 address, article, aside, blockquote, center, dir, div, dd, details, dl, dt, fieldset, figcaption, figure, form, footer, frameset, h1, h2, h3, h4, h5, h6, hr, header, hgroup, isindex, menu, nav, noframes, noscript, ol, p, pre, section, summary, ul { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-/* line 25, ../../sass/partials/_globals.scss */
+/* line 26, ../../sass/partials/_globals.scss */
 .test-surface { padding: 40px; }
 
-/* line 27, ../../sass/partials/_globals.scss */
+/* line 28, ../../sass/partials/_globals.scss */
 body { color: #333333; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -moz-tap-highlight-color: rgba(0, 0, 0, 0); -ms-tap-highlight-color: rgba(0, 0, 0, 0); -o-tap-highlight-color: rgba(0, 0, 0, 0); tap-highlight-color: rgba(0, 0, 0, 0); -moz-user-select: -moz-none; cursor: default; }
 
-/* line 33, ../../sass/partials/_globals.scss */
+/* line 34, ../../sass/partials/_globals.scss */
 .clip-text { display: inline-block; width: 100%; white-space: nowrap; overflow: hidden; -webkit-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -ms-text-overflow: ellipsis; -o-text-overflow: ellipsis; text-overflow: ellipsis; }
 
-/* line 42, ../../sass/partials/_globals.scss */
+/* line 43, ../../sass/partials/_globals.scss */
 .table figure { margin: 0; }
 
-/* line 43, ../../sass/partials/_globals.scss */
+/* line 44, ../../sass/partials/_globals.scss */
 .tbody, .thead, .tr { clear: both; width: 100%; margin: 0; position: relative; }
 
-/* line 49, ../../sass/partials/_globals.scss */
+/* line 50, ../../sass/partials/_globals.scss */
 .td, .th { float: left; }
 
 /* line 4, ../../sass/partials/_widget.scss */
@@ -2714,32 +2714,42 @@ body { color: #333333; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); -webkit-us
 /* line 73, ../../sass/partials/_widget.scss */
 .ldrbd-widget footer, .ldrbd-widget .ldr-list { border: 1px solid #c4c4c4; }
 /* line 77, ../../sass/partials/_widget.scss */
-.ldrbd-widget footer { border-top-color: #dddddd; background-color: white; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); padding: 16px 8px; -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; position: relative; z-index: 3; color: #999999; text-align: center; }
-/* line 90, ../../sass/partials/_widget.scss */
+.ldrbd-widget footer { border-top-color: #dddddd; background-color: white; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); padding: 16px 8px; -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; position: relative; float: left; clear: both; width: 100%; z-index: 3; color: #999999; text-align: center; }
+/* line 93, ../../sass/partials/_widget.scss */
 .ldrbd-widget footer:before { display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; content: ''; -webkit-box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.1); box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.1); }
-/* line 103, ../../sass/partials/_widget.scss */
-.ldrbd-widget .ldr-list-wrapper { background-color: transparent; width: 100%; padding: 0 6px; position: relative; z-index: 2; }
-/* line 112, ../../sass/partials/_widget.scss */
+/* line 106, ../../sass/partials/_widget.scss */
+.ldrbd-widget .ldr-list-wrapper { background-color: transparent; width: 100%; padding: 0 6px; position: relative; float: left; z-index: 2; }
+/* line 117, ../../sass/partials/_widget.scss */
+.ldrbd-widget .ldr-list-wrapper .ldr-list { display: none; float: left; position: relative; left: auto; right: 0; top: 0; }
+/* line 124, ../../sass/partials/_widget.scss */
+.ldrbd-widget .ldr-list-wrapper .ldr-list:first-child { display: table; left: 0; right: auto; }
+/* line 133, ../../sass/partials/_widget.scss */
+.ldrbd-widget .ldr-list-wrapper.twocol .ldr-list { display: table; width: 50%; }
+/* line 141, ../../sass/partials/_widget.scss */
 .ldrbd-widget .ldr-list { background-color: white; margin: 0; border-bottom: 0 none; }
-/* line 126, ../../sass/partials/_widget.scss */
+/* line 155, ../../sass/partials/_widget.scss */
 .ldrbd-widget .ldr-list .tr, .ldrbd-widget .ldr-list .td, .ldrbd-widget .ldr-list .th { height: 56px; line-height: 56px; background-color: #f9f9f9; }
-/* line 131, ../../sass/partials/_widget.scss */
+/* line 160, ../../sass/partials/_widget.scss */
 .ldrbd-widget .ldr-list .td, .ldrbd-widget .ldr-list .th { padding: 0 8px; width: auto; white-space: nowrap; position: absolute; top: 0; left: auto; border-bottom: 1px solid white; }
-/* line 143, ../../sass/partials/_widget.scss */
+/* line 172, ../../sass/partials/_widget.scss */
 .ldrbd-widget .ldr-list .thead .tr, .ldrbd-widget .ldr-list .thead .td, .ldrbd-widget .ldr-list .thead .th { height: 28px; line-height: 28px; background-color: #e5e5e5; font-size: 12px; text-transform: uppercase; border-bottom: 0 none; }
-/* line 167, ../../sass/partials/_widget.scss */
+/* line 196, ../../sass/partials/_widget.scss */
 .ldrbd-widget .ldr-list .pic { visibility: collapse; display: none; width: 0; max-width: 0; min-width: 0; padding: 0; margin: 0; }
-/* line 171, ../../sass/partials/_widget.scss */
-.ldrbd-widget .ldr-list .name { left: 0; right: 80px; }
-/* line 176, ../../sass/partials/_widget.scss */
-.ldrbd-widget .ldr-list .score { width: 80px; min-width: 80px; right: 0; text-align: center; font-weight: bold; }
-/* line 183, ../../sass/partials/_widget.scss */
+/* line 200, ../../sass/partials/_widget.scss */
+.ldrbd-widget .ldr-list .name { left: 0; right: 160px; }
+/* line 206, ../../sass/partials/_widget.scss */
+.ldrbd-widget .ldr-list .lane, .ldrbd-widget .ldr-list .score { width: 80px; min-width: 80px; text-align: center; font-weight: bold; }
+/* line 212, ../../sass/partials/_widget.scss */
+.ldrbd-widget .ldr-list .lane { right: 80px; }
+/* line 213, ../../sass/partials/_widget.scss */
+.ldrbd-widget .ldr-list .score { right: 0; }
+/* line 215, ../../sass/partials/_widget.scss */
 .ldrbd-widget .ldr-list .score, .ldrbd-widget .ldr-list .score .clip-text { -webkit-transition: width 0s linear; -webkit-transition-delay: 0.3s; -moz-transition: width 0s linear 0.3s; -o-transition: width 0s linear 0.3s; transition: width 0s linear 0.3s; }
-/* line 188, ../../sass/partials/_widget.scss */
+/* line 218, ../../sass/partials/_widget.scss */
 .ldrbd-widget .ldr-list .score:hover { width: auto; }
-/* line 189, ../../sass/partials/_widget.scss */
+/* line 219, ../../sass/partials/_widget.scss */
 .ldrbd-widget .ldr-list .score:hover, .ldrbd-widget .ldr-list .score:hover .clip-text { -webkit-transition-delay: 0.1s; -moz-transition-delay: 0.1s; -o-transition-delay: 0.1s; transition-delay: 0.1s; }
-/* line 199, ../../sass/partials/_widget.scss */
+/* line 231, ../../sass/partials/_widget.scss */
 .ldrbd-widget header + .ldr-list-wrapper .ldr-list { border-top: 0 none; }
 
 /* line 6, ../../sass/partials/_admin.scss */
