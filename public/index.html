@@ -15,27 +15,54 @@
         <header role="heading">
             <h1 class="widget-title">Leaderboard</h1>
         </header>
-        <div class="ldr-list-wrapper" role="structure">
+        <div class="ldr-list-wrapper" role="structure"
+             ng-class="{twocol: true}">
+            <!-- TODO: when there are more than 10 scores entered, the 'twocol' class above should show up, which will cause each row (.left/.right) to have 50% width - and will make .right not be hidden-->
             <div class="ldr-list table table-hover" role="grid">
-                
+                <!-- TODO: top 10 scores should populate here -->
                 <div class="thead" role="rowheader">
                     <div class="tr" role="row">
                         <div class="th pic"></div>
                         <div class="th name"><div class="clip-text">Contestant</div></div>
+                        <div class="th lane"><div class="clip-text">Lane</div></div>
                         <div class="th score"><div class="clip-text">Score</div></div>
                     </div>
                 </div>
-
                 <div class="tbody" role="rowgroup">
-                    <div class="tr" data-ng-repeat="contestant in contestants | orderBy:'-score'" data-contestant="contestant" role="row" ng-cloak>
+                    <div class="tr" role="row"
+                         data-ng-repeat="contestant in contestants | orderBy:'-score'" 
+                         data-contestant="contestant">
                         <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
                         <div class="td name" role="gridcell" title="{{contestant.display_name}}">
                             <div class="clip-text">{{contestant.display_name}}</div>
                         </div>
+                        <div class="td lane" role="gridcell" title="{{contestant.lane}}"><div class="clip-text">{{contestant.lane}}</div></div>
                         <div class="td score" role="gridcell" title="{{contestant.score}}"><div class="clip-text">{{contestant.score}}</div></div>
                     </div>
                 </div>
-                
+            </div>
+            <div class="ldr-list table table-hover" role="grid">
+                <!-- TODO: bottom 10 scores should populate here -->
+                <div class="thead" role="rowheader">
+                    <div class="tr" role="row">
+                        <div class="th pic"></div>
+                        <div class="th name"><div class="clip-text">Contestant</div></div>
+                        <div class="th lane"><div class="clip-text">Lane</div></div>
+                        <div class="th score"><div class="clip-text">Score</div></div>
+                    </div>
+                </div>
+                <div class="tbody" role="rowgroup">
+                    <div class="tr" role="row"
+                         data-ng-repeat="contestant in contestants | orderBy:'-score'" 
+                         data-contestant="contestant">
+                        <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
+                        <div class="td name" role="gridcell" title="{{contestant.display_name}}">
+                            <div class="clip-text">{{contestant.display_name}}</div>
+                        </div>
+                        <div class="td lane" role="gridcell" title="{{contestant.lane}}"><div class="clip-text">{{contestant.lane}}</div></div>
+                        <div class="td score" role="gridcell" title="{{contestant.score}}"><div class="clip-text">{{contestant.score}}</div></div>
+                    </div>
+                </div>
             </div>
 
             <footer role="status">
