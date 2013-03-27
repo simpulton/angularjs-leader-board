@@ -28,7 +28,7 @@
                 </div>
                 <div class="tbody" role="rowgroup">
                     <div class="tr" role="row"
-                         data-ng-repeat="contestant in rightContestants | orderBy:'-score'" 
+                         data-ng-repeat="contestant in rightContestants" 
                          data-contestant="contestant">
                         <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
                         <div class="td name" role="gridcell" title="{{contestant.display_name}}">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="tbody" role="rowgroup">
                     <div class="tr" role="row"
-                         data-ng-repeat="contestant in leftContestants | orderBy:'-score'" 
+                         data-ng-repeat="contestant in leftContestants" 
                          data-contestant="contestant">
                         <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
                         <div class="td name" role="gridcell" title="{{contestant.display_name}}">
