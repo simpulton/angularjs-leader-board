@@ -85,22 +85,37 @@ app.factory('socket', function($rootScope) {
 
 app.controller('MainCtrl', function($scope, socket) {
 	$scope.contestants = [];
+	$scope.rightContestants = [];
+	$scope.leftContestants = [];
 
 	socket.emit('listContestants');
 
 	// Incoming
 	socket.on('onContestantsListed', function(data) {
 		$scope.contestants.push.apply($scope.contestants, data);
+		updateColumns();
 	});
 
 	socket.on('onContestantCreated', function(data) {
 		$scope.contestants.push(data);
+		updateColumns();
 	});
 
 	socket.on('onContestantDeleted', function(data) {
 		$scope.handleDeleteContestant(data.id);
+		updateColumns();
 	});
 
+	var updateColumns = function() {
+		$scope.rightContestants = $scope.contestants.slice(0,10);
+		$scope.leftContestants = $scope.contestants.slice(10,20);	
+	}
+
+	$scope.shouldShowTwoColumns = function() {
+		return $scope.contestants.length > 10;
+	}
+
+	// TODO: Refactor
 	var _resetFormValidation = function() {
 		$("input:first").focus();
 		var $dirtyInputs = $("#ldrbd").find(".new input.ng-dirty")
@@ -109,12 +124,12 @@ app.controller('MainCtrl', function($scope, socket) {
 	};
 
 	// Outgoing
-	$scope.createContestant = function(display_name, lane, score) {
+	$scope.createContestant = function(display_name) {
 		var contestant = {
 			id: new Date().getTime(),
-			lane: lane,
+			lane: $scope.contestants.length + 1, // Next available lane
 			display_name: display_name,
-			score: Number(score)
+			score: 0
 		};
 
 		$scope.contestants.push(contestant);
@@ -130,8 +145,6 @@ app.controller('MainCtrl', function($scope, socket) {
 	};
 
 	$scope.handleDeleteContestant = function(id) {
-		console.log('HANDLE DELETE CONTESTANT', id);
-
 		var oldContestants = $scope.contestants,
 		newContestants = [];
 
@@ -164,5 +177,4 @@ $(function(){
 
 		});
 	}, 100);
-
 });

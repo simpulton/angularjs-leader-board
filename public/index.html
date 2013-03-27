@@ -16,10 +16,8 @@
             <h1 class="widget-title">Leaderboard</h1>
         </header>
         <div class="ldr-list-wrapper" role="structure"
-             ng-class="{twocol: true}">
-            <!-- TODO: when there are more than 10 scores entered, the 'twocol' class above should show up, which will cause each row (.left/.right) to have 50% width - and will make .right not be hidden-->
+             ng-class="{twocol: shouldShowTwoColumns()}">
             <div class="ldr-list table table-hover" role="grid">
-                <!-- TODO: top 10 scores should populate here -->
                 <div class="thead" role="rowheader">
                     <div class="tr" role="row">
                         <div class="th pic"></div>
@@ -30,7 +28,7 @@
                 </div>
                 <div class="tbody" role="rowgroup">
                     <div class="tr" role="row"
-                         data-ng-repeat="contestant in contestants | orderBy:'-score'" 
+                         data-ng-repeat="contestant in rightContestants | orderBy:'-score'" 
                          data-contestant="contestant">
                         <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
                         <div class="td name" role="gridcell" title="{{contestant.display_name}}">
@@ -42,7 +40,6 @@
                 </div>
             </div>
             <div class="ldr-list table table-hover" role="grid">
-                <!-- TODO: bottom 10 scores should populate here -->
                 <div class="thead" role="rowheader">
                     <div class="tr" role="row">
                         <div class="th pic"></div>
@@ -53,7 +50,7 @@
                 </div>
                 <div class="tbody" role="rowgroup">
                     <div class="tr" role="row"
-                         data-ng-repeat="contestant in contestants | orderBy:'-score'" 
+                         data-ng-repeat="contestant in leftContestants | orderBy:'-score'" 
                          data-contestant="contestant">
                         <div class="td pic" role="gridcell"><figure class="thumbnail"></figure></div>
                         <div class="td name" role="gridcell" title="{{contestant.display_name}}">

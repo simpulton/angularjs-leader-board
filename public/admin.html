@@ -70,7 +70,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="existing" ng-repeat="contestant in contestants | orderBy:'display_name'" contestant="contestant" ondelete="deleteContestant(id)">
+                            <tr class="existing" ng-repeat="contestant in contestants | orderBy:'lane'" contestant="contestant" ondelete="deleteContestant(id)">
                                 <td class="name">
                                     <input name="contestantName_{{ contestant.id }}" ng-model="contestant.display_name" type="text">
                                 </td>
