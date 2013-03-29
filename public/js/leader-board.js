@@ -78,7 +78,7 @@ app.directive('remotecontestant', function(socket) {
 		socket.on('onContestantUpdated', function(data) {
 			// Update if the same contestant
 			if(data.id == $scope.remotecontestant.id) {
-				$scope.contestant.display_name = data.display_name;
+				$scope.remotecontestant.display_name = data.display_name;
 				$scope.remotecontestant.score = Number(data.score);
 			}
 		});
