@@ -59,6 +59,50 @@ app.directive('contestant', function(socket) {
 		};
 	});
 
+app.directive('remotecontestant', function(socket) {
+	var linker = function(scope, element, attrs) {
+		scope.$watch('remotecontestant', function(){
+			if(typeof scope.remotecontestant !== 'undefined') {
+				element.hide().fadeIn();
+			}
+		})
+	};
+
+	var controller = function($scope) {
+		$scope.shouldShow = function() {
+			var show = typeof $scope.remotecontestant !== 'undefined'
+			return show;
+		}	
+
+		// Incoming
+		socket.on('onContestantUpdated', function(data) {
+			// Update if the same contestant
+			if(data.id == $scope.remotecontestant.id) {
+				$scope.remotecontestant.score = Number(data.score);
+			}
+		});
+
+		// Outgoing
+		$scope.incrementScore = function(amount) {
+			$scope.remotecontestant.score += amount;
+			$scope.updateContestant($scope.remotecontestant);
+		};
+
+		$scope.updateContestant = function(contestant) {
+			socket.emit('updateContestant', contestant);
+		};
+	};
+
+	return {
+		restrict: 'A',
+		link: linker,
+		controller: controller,
+		scope: {
+			remotecontestant: '=',
+		}
+	};
+});
+
 app.factory('socket', function($rootScope) {
 	var socket = io.connect();
 	return {
@@ -80,6 +124,47 @@ app.factory('socket', function($rootScope) {
 				});
 			});
 		}
+	};
+});
+
+app.controller('RemoteCtrl', function($scope, socket) {
+	$scope.contestant;
+	$scope.contestants = [];
+
+	socket.emit('listContestants');
+
+	// Incoming
+	socket.on('onContestantsListed', function(data) {
+		$scope.contestants.push.apply($scope.contestants, data);
+	});
+
+	socket.on('onContestantCreated', function(data) {
+		$scope.contestants.push(data);
+	});
+
+	socket.on('onContestantDeleted', function(data) {
+		$scope.handleDeleteContestant(data.id);
+	});
+
+	$scope.selectContestant = function(id) {
+		angular.forEach($scope.contestants, function(c) {
+			if(c.id === id) {
+				$scope.contestant = c;
+			}
+		});
+	};
+
+	$scope.handleDeleteContestant = function(id) {
+		var oldContestants = $scope.contestants,
+		newContestants = [];
+
+		angular.forEach(oldContestants, function(contestant) {
+			if(contestant.id !== id) {
+				newContestants.push(contestant);
+			}
+		});
+
+		$scope.contestants = newContestants;
 	};
 });
 

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html data-ng-app="app" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Remote Control</title>
+
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/remoteApp.css" />
+    <link rel="stylesheet" href="/css/remoteControl.css" />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/modernizr.min.js"></script>
+
+</head>
+<body>
+    <div ng-controller="RemoteCtrl" class="row" style="margin-top: 50px;">
+        <section class="small-12 large-12 columns">
+            <div class="small-12 columns">
+                <select name="athletesName" class="orderby" ng-model="currentContestant" 
+                ng-change="selectContestant(currentContestant.id)" 
+                ng-options="c.display_name for c in contestants">
+                <option value="">Choose an Athlete</option>
+            </select>
+            <div remotecontestant="contestant" class="hide">
+                <input type="text" ng-model="remotecontestant.score" 
+                ng-change="updateContestant(remotecontestant)" />
+                <a class="large button expand" ng-click="incrementScore(1)">+1</a>
+                <a class="small button secondary expand" ng-click="incrementScore(5)">+5</a>
+                <a class="small button secondary expand" ng-click="incrementScore(10)">+10</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+<script src="/js/leader-board.js"></script> 
+</body>
+</html>
