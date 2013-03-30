@@ -85,7 +85,7 @@ app.directive('remotecontestant', function(socket) {
 
 		// Outgoing
 		$scope.incrementScore = function(amount) {
-			$scope.remotecontestant.score += amount;
+			$scope.remotecontestant.score += Number(amount);
 			$scope.updateContestant($scope.remotecontestant);
 		};
 
