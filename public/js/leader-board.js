@@ -11,8 +11,8 @@ app.directive('contestant', function(socket) {
 				// Update if the same contestant
 				if(data.id == $scope.contestant.id) {
 					$scope.contestant.display_name = data.display_name;
-					$scope.contestant.lane = Number(data.lane);
-					$scope.contestant.score = Number(data.score);
+					$scope.contestant.lane = parseInt(data.lane, 10);
+					$scope.contestant.score = parseInt(data.score, 10);
 				}
 			});
 
@@ -26,7 +26,7 @@ app.directive('contestant', function(socket) {
 				contestant.lane--;
 				$scope.updateContestant(contestant);
 			};
-			
+
 			$scope.incrementScore = function(contestant) {
 				contestant.score++;
 				$scope.updateContestant(contestant);
@@ -65,21 +65,20 @@ app.directive('remotecontestant', function(socket) {
 			if(typeof scope.remotecontestant !== 'undefined') {
 				element.hide().fadeIn();
 			}
-		})
+		});
 	};
 
 	var controller = function($scope) {
 		$scope.shouldShow = function() {
-			var show = typeof $scope.remotecontestant !== 'undefined'
-			return show;
-		}	
+			return typeof $scope.remotecontestant !== 'undefined';
+		};
 
 		// Incoming
 		socket.on('onContestantUpdated', function(data) {
 			// Update if the same contestant
 			if(data.id == $scope.remotecontestant.id) {
 				$scope.remotecontestant.display_name = data.display_name;
-				$scope.remotecontestant.score = Number(data.score);
+				$scope.remotecontestant.score = parseInt(data.score, 10);
 			}
 		});
 
@@ -99,7 +98,7 @@ app.directive('remotecontestant', function(socket) {
 		link: linker,
 		controller: controller,
 		scope: {
-			remotecontestant: '=',
+			remotecontestant: '='
 		}
 	};
 });
@@ -129,7 +128,7 @@ app.factory('socket', function($rootScope) {
 });
 
 app.controller('RemoteCtrl', function($scope, socket) {
-	$scope.contestant;
+	$scope.contestant = {};
 	$scope.contestants = [];
 
 	socket.emit('listContestants');
@@ -194,12 +193,12 @@ app.controller('MainCtrl', function($scope, socket) {
 
 	var updateColumns = function() {
 		$scope.rightContestants = $scope.contestants.slice(0,10);
-		$scope.leftContestants = $scope.contestants.slice(10,20);	
-	}
+		$scope.leftContestants = $scope.contestants.slice(10,20);
+	};
 
 	$scope.shouldShowTwoColumns = function() {
 		return $scope.contestants.length > 10;
-	}
+	};
 
 	// TODO: Refactor
 	var _resetFormValidation = function() {
@@ -241,7 +240,7 @@ app.controller('MainCtrl', function($scope, socket) {
 		});
 
 		$scope.contestants = newContestants;
-	}
+	};
 });
 
 // misc form validation stuff
