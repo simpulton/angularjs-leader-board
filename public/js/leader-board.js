@@ -84,7 +84,12 @@ app.directive('remotecontestant', function(socket) {
 
 		// Outgoing
 		$scope.incrementScore = function(amount) {
-			$scope.remotecontestant.score += Number(amount);
+			$scope.remotecontestant.score = parseInt($scope.remotecontestant.score, 10) + parseInt(amount, 10);
+			$scope.updateContestant($scope.remotecontestant);
+		};
+
+		$scope.decrementScore = function(amount) {
+			$scope.remotecontestant.score = parseInt($scope.remotecontestant.score, 10) - parseInt(amount, 10);
 			$scope.updateContestant($scope.remotecontestant);
 		};
 
@@ -128,7 +133,7 @@ app.factory('socket', function($rootScope) {
 });
 
 app.controller('RemoteCtrl', function($scope, socket) {
-	$scope.contestant = {};
+	$scope.contestant = undefined;
 	$scope.contestants = [];
 
 	socket.emit('listContestants');
@@ -177,7 +182,7 @@ app.controller('MainCtrl', function($scope, socket) {
 
 	// Incoming
 	socket.on('onContestantsListed', function(data) {
-		$scope.contestants.push.apply($scope.contestants, data);
+		$scope.contestants = data;
 		updateColumns();
 	});
 
@@ -209,6 +214,11 @@ app.controller('MainCtrl', function($scope, socket) {
 	};
 
 	// Outgoing
+	$scope.resetContestants = function() {
+		$scope.contestants = [];
+		socket.emit('resetContestants');
+	};
+
 	$scope.createContestant = function(display_name) {
 		var contestant = {
 			id: new Date().getTime(),

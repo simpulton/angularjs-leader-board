@@ -10,6 +10,11 @@ app.configure(function() {
 var contestants = [];
 
 io.sockets.on('connection', function(socket) {
+    socket.on('resetContestants', function(data) {
+        contestants = [];
+        socket.broadcast.emit('onContestantsListed', contestants);
+    });
+
 	socket.on('listContestants', function(data) {
         socket.emit('onContestantsListed', contestants);
     });

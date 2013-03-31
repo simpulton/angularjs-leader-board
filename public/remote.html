@@ -25,11 +25,12 @@
                 <option value="">Choose an Athlete</option>
             </select>
             <div remotecontestant="contestant" class="hide">
-                <input type="text" ng-model="remotecontestant.score" 
-                ng-change="updateContestant(remotecontestant)" />
+                <input ng-model="remotecontestant.score" ng-change="updateContestant(remotecontestant)" type="text" />
                 <a class="large button expand" ng-click="incrementScore(1)">+1</a>
                 <a class="small button secondary expand" ng-click="incrementScore(5)">+5</a>
                 <a class="small button secondary expand" ng-click="incrementScore(10)">+10</a>
+                <hr>
+                <a class="small button secondary expand" ng-click="decrementScore(1)">-1</a>
             </div>
         </div>
     </section>
